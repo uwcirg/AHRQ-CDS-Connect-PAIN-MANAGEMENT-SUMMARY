@@ -138,7 +138,7 @@
         "subject": {
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2"
         },
-        "issued": "2018-10-09T16:00:00.000Z",
+        "issued": "2019-06-15T16:00:00.000Z",
         "valueQuantity": {
           "value": 10
         },
@@ -151,6 +151,41 @@
       "resource": {
         "resourceType": "Observation",
         "id": "76c81308-3352-4f19-bf01-eb0f1eac0055",
+        "status": "final",
+        "category": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/observation-category",
+              "code": "survey"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "38221-8",
+              "display": "Pain severity Wong-Baker FACES Scale"
+            }
+          ],
+          "text": "Pain severity Wong-Baker FACES Scale"
+        },
+        "subject": {
+          "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2"
+        },
+        "issued": "2018-10-09T16:00:00.000Z",
+        "valueQuantity": {
+          "value": 6
+        },
+        "interpretation": {
+          "text": "Hurts Even More"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "f5e65770-0564-43d9-b02b-08d2b9b3446d",
         "status": "final",
         "category": {
           "coding": [
@@ -243,7 +278,7 @@
         "subject": {
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2"
         },
-        "issued": "2017-11-15T16:00:00.000Z",
+        "issued": "2018-10-09T16:00:00.000Z",
         "valueQuantity": {
           "value": 5
         },
@@ -322,7 +357,7 @@
         "subject": {
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2"
         },
-        "issued": "2017-05-30T16:00:00.000Z",
+        "issued": "2017-11-15T16:00:00.000Z",
         "valueQuantity": {
           "value": 7
         },
@@ -563,8 +598,30 @@
       "resource": {
         "resourceType": "MedicationOrder",
         "id": "b8171048-6d38-4592-a66e-6a4b1bd70881",
+        "dateWritten": "2019-04-15T16:02:00.000Z",
+        "status": "active",
+        "patient": {
+          "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1049593",
+              "display": "12 HR Oxycodone Hydrochloride 60 MG Extended Release Oral Tablet"
+            }
+          ],
+          "text": "12 HR Oxycodone Hydrochloride 60 MG Extended Release Oral Tablet"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationOrder",
+        "id": "a2b0a26a-e9ab-4ad0-9b99-96316c6b262f",
         "dateWritten": "2019-01-15T16:02:00.000Z",
         "status": "active",
+        "dateEnded": "2019-04-15T16:02:00.000Z",
         "patient": {
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2"
         },
@@ -782,8 +839,30 @@
       "resource": {
         "resourceType": "MedicationOrder",
         "id": "595158d5-bedf-464c-b140-2b94059e2120",
+        "dateWritten": "2019-04-15T16:01:00.000Z",
+        "status": "active",
+        "patient": {
+          "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1049717",
+              "display": "Oxycodone Hydrochloride 10 MG Oral Capsule"
+            }
+          ],
+          "text": "Oxycodone Hydrochloride 10 MG Oral Capsule"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationOrder",
+        "id": "5cff8000-2308-495f-a562-293cd2d0b88f",
         "dateWritten": "2019-01-15T16:01:00.000Z",
         "status": "active",
+        "dateEnded": "2019-04-15T16:01:00.000Z",
         "patient": {
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2"
         },
@@ -1240,8 +1319,8 @@
     {
       "resource": {
         "resourceType": "MedicationOrder",
-        "id": "9462c4d0-b60f-4426-a476-a5f79ad3eb65",
-        "dateWritten": "2018-05-15T00:00:00.000Z",
+        "id": "4d592032-9454-444b-b62e-8b811f767569",
+        "dateWritten": "2018-05-15T16:00:00.000Z",
         "status": "active",
         "dateEnded": "2018-11-15T00:00:00.000Z",
         "patient": {
@@ -1265,6 +1344,28 @@
         "id": "916cdca9-da7b-455b-8688-7cad054fdaf1",
         "dateWritten": "2019-01-15T16:00:00.000Z",
         "status": "active",
+        "dateEnded": "2019-04-15T16:00:00.000Z",
+        "patient": {
+          "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2"
+        },
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "876193",
+              "display": "POLYETHYLENE GLYCOL 3350 17000 MG Powder for Oral Solution"
+            }
+          ],
+          "text": "POLYETHYLENE GLYCOL 3350 17000 MG Powder for Oral Solution"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationOrder",
+        "id": "f46982f4-63e0-48a0-99e9-36d51aff2be1",
+        "dateWritten": "2019-04-15T16:00:00.000Z",
+        "status": "active",
         "patient": {
           "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2"
         },
@@ -1284,6 +1385,39 @@
       "resource": {
         "resourceType": "Observation",
         "id": "b7ffafa5-23b1-4d11-9eb2-a8a1f8354c1a",
+        "status": "final",
+        "category": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/observation-category",
+              "code": "therapy"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://cds.ahrq.gov/cdsconnect/pms",
+              "code": "MME",
+              "display": "Morphine Milligram Equivalent (MME)"
+            }
+          ],
+          "text": "Morphine Milligram Equivalent (MME)"
+        },
+        "subject": {
+          "reference": "Patient/5c41cecf-cf81-434f-9da7-e24e5a99dbc2"
+        },
+        "issued": "2019-04-15T16:00:00.000Z",
+        "valueQuantity": {
+          "value": 220,
+          "unit": "{MME}/d"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "1c3fb294-4ef0-47f3-aa09-740ef5bd1bc8",
         "status": "final",
         "category": {
           "coding": [
