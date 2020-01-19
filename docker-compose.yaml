@@ -7,4 +7,6 @@ services:
     ports:
       - 8000:8000
     volumes:
+      # enable hot-reloading
+      # mount checkout into container as bind-mount
       - ./:/opt/app
