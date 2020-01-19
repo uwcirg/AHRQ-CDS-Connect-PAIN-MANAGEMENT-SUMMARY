@@ -1,6 +1,11 @@
 ---
 version: "3.4"
 services:
+  frontend:
+    labels:
+      # route by domain
+      # todo: use as default route?
+      - "traefik.http.routers.frontend.rule=Host(`cosri.cirg.washington.edu`)"
   reverse_proxy:
     image: "traefik:v2.1.2"
     volumes:
