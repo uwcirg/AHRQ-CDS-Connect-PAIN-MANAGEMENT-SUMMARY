@@ -1,0 +1,1067 @@
+{
+  "entry": [
+    {
+      "fullUrl": "https://b3-himss-4571-consumers-master.b3-deploys.com/himss.Adapter1.WebClient/api/fhir/Observation/1.6f2ad4494857ea1182410a0332b55c97",
+      "resource": {
+        "code": {
+          "coding": [
+            {
+              "code": "87511-2",
+              "display": "Combat zone andor hazardous duty work dates",
+              "system": "http://fhir.carevolution.com/codes/ODH-LN/ObservationType",
+              "userSelected": true
+            },
+            {
+              "code": "87511-2",
+              "display": "Combat zone hazard duty work DateRange",
+              "system": "http://loinc.org",
+              "userSelected": false
+            }
+          ],
+          "text": "Combat zone andor hazardous duty work dates"
+        },
+        "effectiveDateTime": "2020-02-24T15:56:26-05:00",
+        "extension": [
+          {
+            "extension": [
+              {
+                "url": "code",
+                "valueString": "PACode"
+              },
+              {
+                "url": "name",
+                "valueString": "PAName"
+              }
+            ],
+            "url": "http://careevolution.com/fhirextensions#dataSource"
+          }
+        ],
+        "id": "1.6f2ad4494857ea1182410a0332b55c97",
+        "meta": {
+          "lastUpdated": "2020-02-24T20:57:38.61+00:00"
+        },
+        "resourceType": "Observation",
+        "status": "unknown",
+        "subject": {
+          "reference": "Patient/53b07006-f454-ea11-8241-0a0332b55c97"
+        },
+        "valueString": "1/2000 - 6/2001"
+      },
+      "search": {
+        "mode": "match"
+      }
+    },
+    {
+      "fullUrl": "https://b3-himss-4571-consumers-master.b3-deploys.com/himss.Adapter1.WebClient/api/fhir/Observation/1.800031764757ea1182410a0332b55c97",
+      "resource": {
+        "code": {
+          "coding": [
+            {
+              "code": "87511-2",
+              "display": "Combat zone andor hazardous duty work dates",
+              "system": "http://fhir.carevolution.com/codes/ODH-LN/ObservationType",
+              "userSelected": true
+            },
+            {
+              "code": "87511-2",
+              "display": "Combat zone hazard duty work DateRange",
+              "system": "http://loinc.org",
+              "userSelected": false
+            }
+          ],
+          "text": "Combat zone andor hazardous duty work dates"
+        },
+        "effectiveDateTime": "2020-02-24T15:50:35-05:00",
+        "extension": [
+          {
+            "extension": [
+              {
+                "url": "code",
+                "valueString": "PACode"
+              },
+              {
+                "url": "name",
+                "valueString": "PAName"
+              }
+            ],
+            "url": "http://careevolution.com/fhirextensions#dataSource"
+          }
+        ],
+        "id": "1.800031764757ea1182410a0332b55c97",
+        "meta": {
+          "lastUpdated": "2020-02-24T20:51:43.713+00:00"
+        },
+        "resourceType": "Observation",
+        "status": "unknown",
+        "subject": {
+          "reference": "Patient/53b07006-f454-ea11-8241-0a0332b55c97"
+        },
+        "valueString": "1/2000 - 6/2001"
+      },
+      "search": {
+        "mode": "match"
+      }
+    },
+    {
+      "fullUrl": "https://b3-himss-4571-consumers-master.b3-deploys.com/himss.Adapter1.WebClient/api/fhir/Observation/1.a3f608243f57ea1182410a0332b55c97",
+      "resource": {
+        "code": {
+          "coding": [
+            {
+              "code": "11341-5",
+              "display": "History of Occupation",
+              "system": "http://fhir.carevolution.com/codes/ODH-LN/ObservationType",
+              "userSelected": true
+            },
+            {
+              "code": "11341-5",
+              "display": "Hx of Occupation",
+              "system": "http://loinc.org",
+              "userSelected": false
+            }
+          ],
+          "text": "History of Occupation"
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "86188-0",
+                  "display": "History of Occupation Industry",
+                  "system": "http://fhir.carevolution.com/codes/ODH-LN/ObservationType",
+                  "userSelected": true
+                },
+                {
+                  "code": "86188-0",
+                  "display": "Hx of Occupation industry",
+                  "system": "http://loinc.org",
+                  "userSelected": false
+                }
+              ],
+              "text": "History of Occupation Industry"
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "770",
+                  "display": "Construction",
+                  "system": "http://fhir.carevolution.com/codes/PHVS_Industry_CDC_Census2010/ObservationValue",
+                  "userSelected": true
+                }
+              ],
+              "text": "Construction"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "87707-6",
+                  "display": "Job supervisory level or pay grade",
+                  "system": "http://fhir.carevolution.com/codes/ODH-LN/ObservationType",
+                  "userSelected": true
+                },
+                {
+                  "code": "87707-6",
+                  "display": "Supervisory level or pay grade",
+                  "system": "http://loinc.org",
+                  "userSelected": false
+                }
+              ],
+              "text": "Job supervisory level or pay grade"
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "C-0",
+                  "display": "Civilian Non Supervisor",
+                  "system": "http://fhir.carevolution.com/codes/PHVS_JobSupervisoryLevelorPayGrade_ODH/ObservationValue",
+                  "userSelected": true
+                }
+              ],
+              "text": "Civilian Non Supervisor"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "85107-8",
+                  "display": "Compensation and sectore employment type",
+                  "system": "http://fhir.carevolution.com/codes/ODH-LN/ObservationType",
+                  "userSelected": true
+                }
+              ],
+              "text": "Compensation and sectore employment type"
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "PWNSE",
+                  "display": "Paid work, not self-employed",
+                  "system": "http://fhir.carevolution.com/codes/PHVS_JobSupervisoryLevelorPayGrade_ODH/ObservationValue",
+                  "userSelected": true
+                }
+              ],
+              "text": "Paid work, not self-employed"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "74159-5",
+                  "display": "Work Schedule NIOSH",
+                  "system": "http://fhir.carevolution.com/codes/ODH-LN/ObservationType",
+                  "userSelected": true
+                },
+                {
+                  "code": "74159-5",
+                  "display": "Work schedule NIOSH",
+                  "system": "http://loinc.org",
+                  "userSelected": false
+                }
+              ],
+              "text": "Work Schedule NIOSH"
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "DS",
+                  "display": "Daytime Schedule",
+                  "system": "http://fhir.carevolution.com/codes/v3.WorkClassificationODH/ObservationValue",
+                  "userSelected": true
+                }
+              ],
+              "text": "Daytime Schedule"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "87512-0",
+                  "display": "Work hours per day",
+                  "system": "http://fhir.carevolution.com/codes/ODH-LN/ObservationType",
+                  "userSelected": true
+                },
+                {
+                  "code": "87512-0",
+                  "display": "Work Hs per D nRate",
+                  "system": "http://loinc.org",
+                  "userSelected": false
+                }
+              ],
+              "text": "Work hours per day"
+            },
+            "valueQuantity": {
+              "value": 8.0
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "74160-3",
+                  "display": "Work days per week",
+                  "system": "http://fhir.carevolution.com/codes/ODH-LN/ObservationType",
+                  "userSelected": true
+                },
+                {
+                  "code": "74160-3",
+                  "display": "Work Ds per W nRate",
+                  "system": "http://loinc.org",
+                  "userSelected": false
+                }
+              ],
+              "text": "Work days per week"
+            },
+            "valueQuantity": {
+              "value": 5.0
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "80427-8",
+                  "display": "Employer name",
+                  "system": "http://fhir.carevolution.com/codes/ODH-LN/ObservationType",
+                  "userSelected": true
+                },
+                {
+                  "code": "80427-8",
+                  "display": "Employer name",
+                  "system": "http://loinc.org",
+                  "userSelected": false
+                }
+              ],
+              "text": "Employer name"
+            },
+            "valueString": "Good Bean Construction"
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "80429-4",
+                  "display": "Employer Address",
+                  "system": "http://fhir.carevolution.com/codes/ODH-LN/ObservationType",
+                  "userSelected": true
+                },
+                {
+                  "code": "80429-4",
+                  "display": "Employer address",
+                  "system": "http://loinc.org",
+                  "userSelected": false
+                }
+              ],
+              "text": "Employer Address"
+            },
+            "valueString": "123 Main St. Seattle WA 98126"
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "63761-1",
+                  "display": "What were your main activities or duties for this job",
+                  "system": "http://fhir.carevolution.com/codes/ODH-LN/ObservationType",
+                  "userSelected": true
+                },
+                {
+                  "code": "63761-1",
+                  "display": "Job hx duties NHANES",
+                  "system": "http://loinc.org",
+                  "userSelected": false
+                }
+              ],
+              "text": "What were your main activities or duties for this job"
+            },
+            "valueString": "Install plumbing in new commercial buildings"
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "10161-8",
+                  "display": "Occupational exposure",
+                  "system": "http://fhir.carevolution.com/codes/ODH-LN/ObservationType",
+                  "userSelected": true
+                },
+                {
+                  "code": "10161-8",
+                  "display": "Hx of Occupational exposure",
+                  "system": "http://loinc.org",
+                  "userSelected": false
+                }
+              ],
+              "text": "Occupational exposure"
+            },
+            "valueString": "Heavy lifting; soldering fumes"
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "54136-7",
+                  "display": "Relationship to patient Family member",
+                  "system": "http://fhir.carevolution.com/codes/ODH-LN/ObservationType",
+                  "userSelected": true
+                },
+                {
+                  "code": "54136-7",
+                  "display": "Relationship to pt Fam Mem",
+                  "system": "http://loinc.org",
+                  "userSelected": false
+                }
+              ],
+              "text": "Relationship to patient Family member"
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "ONESELF",
+                  "display": "Self",
+                  "system": "http://fhir.carevolution.com/codes/PatientRelationshipType/ObservationValue",
+                  "userSelected": true
+                }
+              ],
+              "text": "Self"
+            }
+          }
+        ],
+        "effectiveDateTime": "2019-09-15T00:00:00-04:00",
+        "extension": [
+          {
+            "extension": [
+              {
+                "url": "code",
+                "valueString": "PACode"
+              },
+              {
+                "url": "name",
+                "valueString": "PAName"
+              }
+            ],
+            "url": "http://careevolution.com/fhirextensions#dataSource"
+          }
+        ],
+        "id": "1.a3f608243f57ea1182410a0332b55c97",
+        "meta": {
+          "lastUpdated": "2020-02-24T20:51:43.713+00:00"
+        },
+        "resourceType": "Observation",
+        "status": "unknown",
+        "subject": {
+          "reference": "Patient/53b07006-f454-ea11-8241-0a0332b55c97"
+        },
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "code": "6260",
+              "display": "Construction Laborer",
+              "system": "http://fhir.carevolution.com/codes/PHVS_Occupation_CDC_Census2010/ObservationValue",
+              "userSelected": true
+            }
+          ],
+          "text": "Construction Laborer"
+        }
+      },
+      "search": {
+        "mode": "match"
+      }
+    },
+    {
+      "fullUrl": "https://b3-himss-4571-consumers-master.b3-deploys.com/himss.Adapter1.WebClient/api/fhir/Observation/1.810031764757ea1182410a0332b55c97",
+      "resource": {
+        "code": {
+          "coding": [
+            {
+              "code": "87510-4",
+              "display": "Date of retirement",
+              "system": "http://fhir.carevolution.com/codes/ODH-LN/ObservationType",
+              "userSelected": true
+            },
+            {
+              "code": "87510-4",
+              "display": "Date retired",
+              "system": "http://loinc.org",
+              "userSelected": false
+            }
+          ],
+          "text": "Date of retirement"
+        },
+        "effectiveDateTime": "2018-08-15T00:00:00-04:00",
+        "extension": [
+          {
+            "extension": [
+              {
+                "url": "code",
+                "valueString": "PACode"
+              },
+              {
+                "url": "name",
+                "valueString": "PAName"
+              }
+            ],
+            "url": "http://careevolution.com/fhirextensions#dataSource"
+          }
+        ],
+        "id": "1.810031764757ea1182410a0332b55c97",
+        "meta": {
+          "lastUpdated": "2020-02-24T20:51:43.713+00:00"
+        },
+        "resourceType": "Observation",
+        "status": "unknown",
+        "subject": {
+          "reference": "Patient/53b07006-f454-ea11-8241-0a0332b55c97"
+        },
+        "valueRatio": {
+          "denominator": {
+            "value": 2018.0
+          },
+          "numerator": {
+            "value": 8.0
+          }
+        }
+      },
+      "search": {
+        "mode": "match"
+      }
+    },
+    {
+      "fullUrl": "https://b3-himss-4571-consumers-master.b3-deploys.com/himss.Adapter1.WebClient/api/fhir/Observation/1.702ad4494857ea1182410a0332b55c97",
+      "resource": {
+        "code": {
+          "coding": [
+            {
+              "code": "21843-8",
+              "display": "History of Usual Occupation",
+              "system": "http://fhir.carevolution.com/codes/ODH-LN/ObservationType",
+              "userSelected": true
+            },
+            {
+              "code": "21843-8",
+              "display": "Hx of Usual occupation",
+              "system": "http://loinc.org",
+              "userSelected": false
+            }
+          ],
+          "text": "History of Usual Occupation"
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "21844-6",
+                  "display": "History of Usual Industry",
+                  "system": "http://fhir.carevolution.com/codes/ODH-LN/ObservationType",
+                  "userSelected": true
+                },
+                {
+                  "code": "21844-6",
+                  "display": "Hx of Usual industry",
+                  "system": "http://loinc.org",
+                  "userSelected": false
+                }
+              ],
+              "text": "History of Usual Industry"
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "9670",
+                  "display": "US Army",
+                  "system": "http://fhir.carevolution.com/codes/PHVS_Industry_CDC_Census2010/ObservationValue",
+                  "userSelected": true
+                }
+              ],
+              "text": "US Army"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "74163-7",
+                  "display": "Usual occupation duration",
+                  "system": "http://fhir.carevolution.com/codes/ODH-LN/ObservationType",
+                  "userSelected": true
+                },
+                {
+                  "code": "74163-7",
+                  "display": "Occupation duration",
+                  "system": "http://loinc.org",
+                  "userSelected": false
+                }
+              ],
+              "text": "Usual occupation duration"
+            },
+            "valueQuantity": {
+              "value": 21.0
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "63756-1",
+                  "display": "Start Year",
+                  "system": "http://fhir.carevolution.com/codes/ODH-LN/ObservationType",
+                  "userSelected": true
+                },
+                {
+                  "code": "63756-1",
+                  "display": "Job hx Y start NHANES",
+                  "system": "http://loinc.org",
+                  "userSelected": false
+                }
+              ],
+              "text": "Start Year"
+            },
+            "valueQuantity": {
+              "value": 1998.0
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "54136-7",
+                  "display": "Relationship to patient Family member",
+                  "system": "http://fhir.carevolution.com/codes/ODH-LN/ObservationType",
+                  "userSelected": true
+                },
+                {
+                  "code": "54136-7",
+                  "display": "Relationship to pt Fam Mem",
+                  "system": "http://loinc.org",
+                  "userSelected": false
+                }
+              ],
+              "text": "Relationship to patient Family member"
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "ONESELF",
+                  "display": "Self",
+                  "system": "http://fhir.carevolution.com/codes/PatientRelationshipType/ObservationValue",
+                  "userSelected": true
+                }
+              ],
+              "text": "Self"
+            }
+          }
+        ],
+        "effectiveDateTime": "2018-08-15T00:00:00-04:00",
+        "extension": [
+          {
+            "extension": [
+              {
+                "url": "code",
+                "valueString": "PACode"
+              },
+              {
+                "url": "name",
+                "valueString": "PAName"
+              }
+            ],
+            "url": "http://careevolution.com/fhirextensions#dataSource"
+          }
+        ],
+        "id": "1.702ad4494857ea1182410a0332b55c97",
+        "meta": {
+          "lastUpdated": "2020-02-24T20:57:38.703+00:00"
+        },
+        "resourceType": "Observation",
+        "status": "unknown",
+        "subject": {
+          "reference": "Patient/53b07006-f454-ea11-8241-0a0332b55c97"
+        },
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "code": "6440",
+              "display": "Pipelayers, plumbers, pipefitters, and steamfitters",
+              "system": "http://fhir.carevolution.com/codes/PHVS_Occupation_CDC_Census2010/ObservationValue",
+              "userSelected": true
+            }
+          ],
+          "text": "Pipelayers, plumbers, pipefitters, and steamfitters"
+        }
+      },
+      "search": {
+        "mode": "match"
+      }
+    },
+    {
+      "fullUrl": "https://b3-himss-4571-consumers-master.b3-deploys.com/himss.Adapter1.WebClient/api/fhir/Observation/1.712ad4494857ea1182410a0332b55c97",
+      "resource": {
+        "code": {
+          "coding": [
+            {
+              "code": "11341-5",
+              "display": "History of Occupation",
+              "system": "http://fhir.carevolution.com/codes/ODH-LN/ObservationType",
+              "userSelected": true
+            },
+            {
+              "code": "11341-5",
+              "display": "Hx of Occupation",
+              "system": "http://loinc.org",
+              "userSelected": false
+            }
+          ],
+          "text": "History of Occupation"
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "86188-0",
+                  "display": "History of Occupation Industry",
+                  "system": "http://fhir.carevolution.com/codes/ODH-LN/ObservationType",
+                  "userSelected": true
+                },
+                {
+                  "code": "86188-0",
+                  "display": "Hx of Occupation industry",
+                  "system": "http://loinc.org",
+                  "userSelected": false
+                }
+              ],
+              "text": "History of Occupation Industry"
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "9670",
+                  "display": "US Army",
+                  "system": "http://fhir.carevolution.com/codes/PHVS_Industry_CDC_Census2010/ObservationValue",
+                  "userSelected": true
+                }
+              ],
+              "text": "US Army"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "87707-6",
+                  "display": "Job supervisory level or pay grade",
+                  "system": "http://fhir.carevolution.com/codes/ODH-LN/ObservationType",
+                  "userSelected": true
+                },
+                {
+                  "code": "87707-6",
+                  "display": "Supervisory level or pay grade",
+                  "system": "http://loinc.org",
+                  "userSelected": false
+                }
+              ],
+              "text": "Job supervisory level or pay grade"
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "E-6",
+                  "display": "Enlisted Military Personnel 6",
+                  "system": "http://fhir.carevolution.com/codes/PHVS_JobSupervisoryLevelorPayGrade_ODH/ObservationValue",
+                  "userSelected": true
+                }
+              ],
+              "text": "Enlisted Military Personnel 6"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "85107-8",
+                  "display": "Compensation and sectore employment type",
+                  "system": "http://fhir.carevolution.com/codes/ODH-LN/ObservationType",
+                  "userSelected": true
+                }
+              ],
+              "text": "Compensation and sectore employment type"
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "PWNSE",
+                  "display": "Paid work, not self-employed",
+                  "system": "http://fhir.carevolution.com/codes/PHVS_JobSupervisoryLevelorPayGrade_ODH/ObservationValue",
+                  "userSelected": true
+                }
+              ],
+              "text": "Paid work, not self-employed"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "74159-5",
+                  "display": "Work Schedule NIOSH",
+                  "system": "http://fhir.carevolution.com/codes/ODH-LN/ObservationType",
+                  "userSelected": true
+                },
+                {
+                  "code": "74159-5",
+                  "display": "Work schedule NIOSH",
+                  "system": "http://loinc.org",
+                  "userSelected": false
+                }
+              ],
+              "text": "Work Schedule NIOSH"
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "DS",
+                  "display": "Daytime Schedule",
+                  "system": "http://fhir.carevolution.com/codes/v3.WorkClassificationODH/ObservationValue",
+                  "userSelected": true
+                }
+              ],
+              "text": "Daytime Schedule"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "87512-0",
+                  "display": "Work hours per day",
+                  "system": "http://fhir.carevolution.com/codes/ODH-LN/ObservationType",
+                  "userSelected": true
+                },
+                {
+                  "code": "87512-0",
+                  "display": "Work Hs per D nRate",
+                  "system": "http://loinc.org",
+                  "userSelected": false
+                }
+              ],
+              "text": "Work hours per day"
+            },
+            "valueQuantity": {
+              "value": 8.0
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "74160-3",
+                  "display": "Work days per week",
+                  "system": "http://fhir.carevolution.com/codes/ODH-LN/ObservationType",
+                  "userSelected": true
+                },
+                {
+                  "code": "74160-3",
+                  "display": "Work Ds per W nRate",
+                  "system": "http://loinc.org",
+                  "userSelected": false
+                }
+              ],
+              "text": "Work days per week"
+            },
+            "valueQuantity": {
+              "value": 5.0
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "80427-8",
+                  "display": "Employer name",
+                  "system": "http://fhir.carevolution.com/codes/ODH-LN/ObservationType",
+                  "userSelected": true
+                },
+                {
+                  "code": "80427-8",
+                  "display": "Employer name",
+                  "system": "http://loinc.org",
+                  "userSelected": false
+                }
+              ],
+              "text": "Employer name"
+            },
+            "valueString": "US Army"
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "80429-4",
+                  "display": "Employer Address",
+                  "system": "http://fhir.carevolution.com/codes/ODH-LN/ObservationType",
+                  "userSelected": true
+                },
+                {
+                  "code": "80429-4",
+                  "display": "Employer address",
+                  "system": "http://loinc.org",
+                  "userSelected": false
+                }
+              ],
+              "text": "Employer Address"
+            },
+            "valueString": "Fort Lewis, WA 98433"
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "63761-1",
+                  "display": "What were your main activities or duties for this job",
+                  "system": "http://fhir.carevolution.com/codes/ODH-LN/ObservationType",
+                  "userSelected": true
+                },
+                {
+                  "code": "63761-1",
+                  "display": "Job hx duties NHANES",
+                  "system": "http://loinc.org",
+                  "userSelected": false
+                }
+              ],
+              "text": "What were your main activities or duties for this job"
+            },
+            "valueString": "Maintain plumbing on base"
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "10161-8",
+                  "display": "Occupational exposure",
+                  "system": "http://fhir.carevolution.com/codes/ODH-LN/ObservationType",
+                  "userSelected": true
+                },
+                {
+                  "code": "10161-8",
+                  "display": "Hx of Occupational exposure",
+                  "system": "http://loinc.org",
+                  "userSelected": false
+                }
+              ],
+              "text": "Occupational exposure"
+            },
+            "valueString": "Asbestos; soldering fumes"
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "code": "54136-7",
+                  "display": "Relationship to patient Family member",
+                  "system": "http://fhir.carevolution.com/codes/ODH-LN/ObservationType",
+                  "userSelected": true
+                },
+                {
+                  "code": "54136-7",
+                  "display": "Relationship to pt Fam Mem",
+                  "system": "http://loinc.org",
+                  "userSelected": false
+                }
+              ],
+              "text": "Relationship to patient Family member"
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "ONESELF",
+                  "display": "Self",
+                  "system": "http://fhir.carevolution.com/codes/PatientRelationshipType/ObservationValue",
+                  "userSelected": true
+                }
+              ],
+              "text": "Self"
+            }
+          }
+        ],
+        "effectiveDateTime": "1998-07-15T00:00:00-04:00",
+        "extension": [
+          {
+            "extension": [
+              {
+                "url": "code",
+                "valueString": "PACode"
+              },
+              {
+                "url": "name",
+                "valueString": "PAName"
+              }
+            ],
+            "url": "http://careevolution.com/fhirextensions#dataSource"
+          }
+        ],
+        "id": "1.712ad4494857ea1182410a0332b55c97",
+        "meta": {
+          "lastUpdated": "2020-02-24T20:57:38.783+00:00"
+        },
+        "resourceType": "Observation",
+        "status": "unknown",
+        "subject": {
+          "reference": "Patient/53b07006-f454-ea11-8241-0a0332b55c97"
+        },
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "code": "6440",
+              "display": "Pipelayers, plumbers, pipefitters, and steamfitters",
+              "system": "http://fhir.carevolution.com/codes/PHVS_Occupation_CDC_Census2010/ObservationValue",
+              "userSelected": true
+            }
+          ],
+          "text": "Pipelayers, plumbers, pipefitters and steamfitters"
+        }
+      },
+      "search": {
+        "mode": "match"
+      }
+    },
+    {
+      "fullUrl": "https://b3-himss-4571-consumers-master.b3-deploys.com/himss.Adapter1.WebClient/api/fhir/Observation/1.7f0031764757ea1182410a0332b55c97",
+      "resource": {
+        "code": {
+          "coding": [
+            {
+              "code": "74165-2",
+              "display": "History of employment status",
+              "system": "http://fhir.carevolution.com/codes/ODH-LN/ObservationType",
+              "userSelected": true
+            },
+            {
+              "code": "74165-2",
+              "display": "Hx employment status NIOSH",
+              "system": "http://loinc.org",
+              "userSelected": false
+            }
+          ],
+          "text": "History of employment status"
+        },
+        "effectiveDateTime": "1998-07-15T00:00:00-04:00",
+        "extension": [
+          {
+            "extension": [
+              {
+                "url": "code",
+                "valueString": "PACode"
+              },
+              {
+                "url": "name",
+                "valueString": "PAName"
+              }
+            ],
+            "url": "http://careevolution.com/fhirextensions#dataSource"
+          }
+        ],
+        "id": "1.7f0031764757ea1182410a0332b55c97",
+        "meta": {
+          "lastUpdated": "2020-02-24T20:51:43.493+00:00"
+        },
+        "resourceType": "Observation",
+        "status": "unknown",
+        "subject": {
+          "reference": "Patient/53b07006-f454-ea11-8241-0a0332b55c97"
+        },
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "code": "employed",
+              "display": "employed",
+              "system": "http://fhir.carevolution.com/codes/v3.employmentStatusODH/ObservationValue",
+              "userSelected": true
+            }
+          ],
+          "text": "employed"
+        }
+      },
+      "search": {
+        "mode": "match"
+      }
+    }
+  ],
+  "link": [
+    {
+      "relation": "self",
+      "url": "https://b3-himss-4571-consumers-master.b3-deploys.com/himss.Adapter1.WebClient/api/fhir/Observation?patient._id=53b07006-f454-ea11-8241-0a0332b55c97&_count=20"
+    },
+    {
+      "relation": "first",
+      "url": "https://b3-himss-4571-consumers-master.b3-deploys.com/himss.Adapter1.WebClient/api/fhir/Observation?_query=925fed3c-d8ea-471c-bdcf-7dc15b9cc742&_count=20&_patients=53b07006-f454-ea11-8241-0a0332b55c97&_start=1"
+    }
+  ],
+  "resourceType": "Bundle",
+  "total": 7,
+  "type": "searchset"
+}

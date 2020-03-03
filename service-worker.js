@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/pain-mgmt-summary/precache-manifest.a6a0ce91e290990dfaa07ed8b375f459.js"
+  "/pain-mgmt-summary/precache-manifest.e57988ea4c059246511e710a7983a08e.js"
 );
 
 self.addEventListener('message', (event) => {

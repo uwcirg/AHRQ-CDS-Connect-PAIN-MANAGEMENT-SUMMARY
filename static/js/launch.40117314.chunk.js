@@ -1,2 +1,0 @@
-(this["webpackJsonppain-management-factors"]=this["webpackJsonppain-management-factors"]||[]).push([[1],{635:function(n,t,a){n.exports=a(636)},636:function(n,t,a){"use strict";a.r(t);var o=a(131),c=a.n(o);fetch("".concat("/pain-mgmt-summary","/launch-context.json")).then((function(n){return n.json()})).then((function(n){return c.a.oauth2.authorize(n)})).catch((function(n){return console.error(n)}))}},[[635,3,0]]]);
-//# sourceMappingURL=launch.40117314.chunk.js.map

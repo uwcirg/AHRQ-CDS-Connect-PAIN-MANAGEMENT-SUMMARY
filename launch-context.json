@@ -2,5 +2,7 @@
   "clientId": "6c12dff4-24e7-4475-a742-b08972c4ea27",
   "scope": "patient/*.read launch/patient",
   "completeInTarget": true,
-  "iss": "http://launch.smarthealthit.org/v/r4/sim/eyJoIjoiMSIsImoiOiIxIn0/fhir"
+  "fhirServiceUrl": "http://launch.smarthealthit.org/v/r4/sim/eyJoIjoiMSIsImoiOiIxIn0/fhir", 
+  "iss": "http://launch.smarthealthit.org/v/r4/sim/eyJoIjoiMSIsImoiOiIxIn0/fhir",
+  "fullSessionStorageSupport": false
 }
