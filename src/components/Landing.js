@@ -54,7 +54,8 @@ export default class Landing extends Component {
     let result = {};
     //TODO this is a sample data URL, fix this
     //TODO pass in patient id here?
-    let response = await fetch(`${getEnv("PUBLIC_URL")}/assets/data/patientOccupation.json`)
+    //let response = await fetch(`${getEnv("PUBLIC_URL")}/assets/data/patientOccupation.json`)
+    let response = await fetch(`http://backend:5000/v/r2/fhir/Observation`)
                   .catch(e => console.log(`Error fetching data: ${e.message}`));
     try {
       let json = await response.json();
