@@ -58,10 +58,10 @@ export default class Landing extends Component {
                   .catch(e => console.log(`Error fetching data: ${e.message}`));
     try {
       let json = await response.json();
-      result["occupation"] = json["component"] && json["component"].length ?
+      result["occupation"] = json["valueCodeableConcept"] && json["valueCodeableConcept"].length ?
       //TODO fix here if data structure changes 
-      json["component"].map(item => {
-        return item.code ? item.code.text: "";
+      json["valueCodeableConcept"].map(item => {
+        return item.text.substring(0, item.text.indexOf("["));
       })[0]: "";
     } catch(e) {
       result["occupation"] = null;

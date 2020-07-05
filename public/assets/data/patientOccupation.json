@@ -1,83 +1,116 @@
 {
-    "resourceType":"Observation",
-    "text":{
-       "div":"<div xmlns=\"http://www.w3.org/1999/xhtml\">This observation resource contains the industry and occupation for a patient</div>"
-    },
-    "contained":[
-       {
-          "resourceType":"Organization",
-          "id":"localOrganization",
-          "name":"Awesome Sauce Software Co",
-          "address":[
-             {
-                "state":"TN"
-             },
-             {
-                "city":"Somewhereville"
-             },
-             {
-                "postalCode":"37174"
-             },
-             {
-                "line":[
-                   "12 Radical St"
-                ]
-             }
+  "resourceType": "Observation",
+  "text": {
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">This observation resource contains the industry and occupation for a patient</div>"
+  },
+  "contained": [
+    {
+      "resourceType": "Organization",
+      "id": "localOrganization",
+      "name": "Nurses On the Go",
+      "address": [
+        {
+          "state": "WA"
+        },
+        {
+          "city": "Vancouver"
+        },
+        {
+          "postalCode": "98660"
+        },
+        {
+          "line": [
+            "123 State Street"
           ]
-       }
+        }
+      ]
+    }
+  ],
+  "extension": [
+    {
+      "id": "odh-Employer-extension",
+      "url": "http://hl7.org/fhir/us/odh/StructureDefinition/odh-Employer-extension",
+      "valueReference": {
+        "reference": "#localOrganization"
+      }
+    }
+  ],
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "code": "11341-5"
+      },
+      {
+        "display": "History of Occupation"
+      },
+      {
+        "system": "http://loinc.org"
+      },
+      {
+        "userSelected": false
+      }
     ],
-    "extension":[
-       {
-          "id":"odh-Employer-extension",
-          "url":"http://hl7.org/fhir/us/odh/StructureDefinition/odh-Employer-extension",
-          "valueReference":{
-             "reference":"#localOrganization"
+    "text": "History of Occupation"
+  },
+  "subject": {
+    "reference": "Patient/1dc058f6-6589-434f-b71a-42e02500a14f"
+  },
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "code": "29-1141.04.000450"
+      },
+      {
+        "display": "Adult Health Clinical Nurse Specialist [Clinical Nurse Specialists]"
+      },
+      {
+        "system": "https://phinvads.cdc.gov | 2.16.840.1.114222.4.11.7901"
+      },
+      {
+        "userSelected": true
+      }
+    ],
+    "text": "Sprinkler Fitter [Plumbers, Pipefitters, and Steamfitters]"
+  },
+  "component": [
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "86188-0"
+          },
+          {
+            "display": "History of Occupation Industry"
+          },
+          {
+            "system": "http://loinc.org"
+          },
+          {
+            "userSelected": false
           }
-       }
-    ],
-    "status":"final",
-    "subject":{
-       "reference":"Patient/d92adee0-9991-4a21-8c89-a74bd42a9798"
+        ],
+        "text": "History of Occupation Industry"
+      }
     },
-    "component":[
-       {
-          "code":{
-             "coding":[
-                {
-                   "code":"45-3011.00.000032"
-                },
-                {
-                   "display":"Abalone Fisherman [Fishers and Related Fishing Workers]"
-                },
-                {
-                   "system":"20191121"
-                },
-                {
-                   "userSelected":true
-                }
-             ],
-             "text":"Abalone Fisherman [Fishers and Related Fishing Workers]"
+    {
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "621610.008495"
+          },
+          {
+            "display": "Home nursing services (except private practices) [Home Health Care Services]"
+          },
+          {
+            "system": "https://phinvads.cdc.gov | 2.16.840.1.114222.4.11.7900"
+          },
+          {
+            "userSelected": true
           }
-       },
-       {
-          "code":{
-             "coding":[
-                {
-                   "code":"114111.000573"
-                },
-                {
-                   "display":"Anchovy fishing [Finfish Fishing ]"
-                },
-                {
-                   "system":"20191121"
-                },
-                {
-                   "userSelected":true
-                }
-             ],
-             "text":"Anchovy fishing [Finfish Fishing ]"
-          }
-       }
-    ]
- }
- 
+        ],
+        "text": "Commercial building construction [Commercial and Institutional Building Construction]"
+      }
+    }
+  ]
+}
