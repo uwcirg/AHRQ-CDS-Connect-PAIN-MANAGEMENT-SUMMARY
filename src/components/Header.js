@@ -31,7 +31,7 @@ export default class Header extends Component {
               <div className="patient-demographics">
                 <span className="patient-dob" aria-label="Date of birth">DOB: {patientDOB}</span>
                 <span className="patient-gender">{patientGender}</span>
-                <span className="patient-occupation" title="{patientOccupationHover}">{patientOccupation}</span>
+                <span className="patient-occupation" title={patientOccupationHover}>{patientOccupation}</span>
               </div>
             </div>
           </div>
