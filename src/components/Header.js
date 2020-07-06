@@ -50,6 +50,6 @@ Header.propTypes = {
   patientName: PropTypes.string.isRequired,
   patientDOB: PropTypes.string.isRequired,
   patientGender: PropTypes.string.isRequired,
-  patientOccupation: PropTypes.string
+  patientOccupation: PropTypes.string,
   patientOccupationHover: PropTypes.string
 };
