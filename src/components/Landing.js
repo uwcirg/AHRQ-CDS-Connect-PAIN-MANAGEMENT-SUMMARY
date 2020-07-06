@@ -68,7 +68,7 @@ export default class Landing extends Component {
     		("0" + m.getUTCSeconds()).slice(-2);
       let json = await response.json();
       result["occupation"] = json["valueCodeableConcept"].text.substring(0, json["valueCodeableConcept"].text.indexOf("[") - 1);
-      result["occupationHover"] = "ODH Detail&#10;Provider: OneRecord PHR&#10;Updated: " + dateString + "&#10;" + json["code"].text + " (" + json["code"]["coding"][0].code + "): " + json["valueCodeableConcept"].text + " (" + json["valueCodeableConcept"]["coding"][0].code + ")&#10;" + json["component"][0]["code"].text + " (" + json["component"][0]["code"]["coding"][0].code + "): " + json["component"][1]["valueCodeableConcept"].text + " (" + json["component"][1]["valueCodeableConcept"]["coding"][0].code + ")";
+      result["occupationHover"] = "ODH Detail\nProvider: OneRecord PHR\nUpdated: " + dateString + "\n" + json["code"].text + " (" + json["code"]["coding"][0].code + "): " + json["valueCodeableConcept"].text + " (" + json["valueCodeableConcept"]["coding"][0].code + ")\n" + json["component"][0]["code"].text + " (" + json["component"][0]["code"]["coding"][0].code + "): " + json["component"][1]["valueCodeableConcept"].text + " (" + json["component"][1]["valueCodeableConcept"]["coding"][0].code + ")";
 //      result["occupation"] = json["valueCodeableConcept"] && json["valueCodeableConcept"].length ?
       //TODO fix here if data structure changes 
 //      json["valueCodeableConcept"].text.substring(0, json["valueCodeableConcept"].text.indexOf("[") - 1) : "";
