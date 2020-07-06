@@ -58,13 +58,23 @@ export default class Landing extends Component {
     let response = await fetch(`${getEnv("REACT_APP_CONF_API_URL")}/v/r2/fhir/Observation`)
                   .catch(e => console.log(`Error fetching data: ${e.message}`));
     try {
+      let m = new Date();
+      let dateString =
+    		m.getUTCFullYear() + "/" +
+    		("0" + (m.getUTCMonth()+1)).slice(-2) + "/" +
+    		("0" + m.getUTCDate()).slice(-2) + " " +
+    		("0" + m.getUTCHours()).slice(-2) + ":" +
+    		("0" + m.getUTCMinutes()).slice(-2) + ":" +
+    		("0" + m.getUTCSeconds()).slice(-2);
       let json = await response.json();
       result["occupation"] = json["valueCodeableConcept"].text.substring(0, json["valueCodeableConcept"].text.indexOf("[") - 1);
+      result["occupationHover"] = "ODH Detail&#10;Provider: OneRecord PHR&#10;Updated: " + dateString + "&#10;" + json["code"].text + " (" + json["code"]["coding"][0].code + "): " + json["valueCodeableConcept"].text + " (" + json["valueCodeableConcept"]["coding"][0].code + ")&#10;" + json["component"][0]["code"].text + " (" + json["component"][0]["code"]["coding"][0].code + "): " + json["component"][1]["valueCodeableConcept"].text + " (" + json["component"][1]["valueCodeableConcept"]["coding"][0].code + ")";
 //      result["occupation"] = json["valueCodeableConcept"] && json["valueCodeableConcept"].length ?
       //TODO fix here if data structure changes 
 //      json["valueCodeableConcept"].text.substring(0, json["valueCodeableConcept"].text.indexOf("[") - 1) : "";
     } catch(e) {
       result["occupation"] = null;
+      result["occupationHover"] = null;
       console.log("error occurred parsing data: ", e);
     }
     return result;
@@ -522,6 +532,7 @@ export default class Landing extends Component {
           patientDOB={datishFormat(this.state.result,patientResource.birthDate)}
           patientGender={summary.Patient.Gender}
           patientOccupation={summary.occupation}
+          patientOccupationHover={summary.occupationHover}
           meetsInclusionCriteria={summary.Patient.MeetsInclusionCriteria}
         />
 
