@@ -77,7 +77,7 @@ function getLibrary(release) {
 function getPatientSource(release) {
   switch(release) {
     case 2:
-      return cqlfhir.PatientSource.FHIRv102();
+//      return cqlfhir.PatientSource.FHIRv102();
     case 4:
       return cqlfhir.PatientSource.FHIRv400();
     default:
