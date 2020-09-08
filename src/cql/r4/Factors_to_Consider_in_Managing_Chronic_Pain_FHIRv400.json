@@ -31,6 +31,10 @@
             "localIdentifier" : "FHIRHelpers",
             "path" : "FHIRHelpers",
             "version" : "4.0.0"
+         }, {
+            "localIdentifier" : "MMECalculator",
+            "path" : "MMECalculator",
+            "version" : "3.0.0"
          } ]
       },
       "parameters" : {
@@ -519,11 +523,6 @@
             "code" : [ {
                "name" : "Morphine Milligram Equivalent (MME) code"
             } ]
-         } ]
-      },
-      "contexts" : {
-         "def" : [ {
-            "name" : "Patient"
          } ]
       },
       "statements" : {
@@ -2043,7 +2042,6 @@
                   "operand" : [ {
                      "dataType" : "{http://hl7.org/fhir}Condition",
                      "codeProperty" : "code",
-                     "codeComparator" : "in",
                      "type" : "Retrieve",
                      "codes" : {
                         "name" : "Conditions associated with chronic pain",
@@ -2082,7 +2080,6 @@
                         "operand" : [ {
                            "dataType" : "{http://hl7.org/fhir}MedicationRequest",
                            "codeProperty" : "medication",
-                           "codeComparator" : "in",
                            "type" : "Retrieve",
                            "codes" : {
                               "name" : "Opioid Pain Medications",
@@ -2107,7 +2104,6 @@
                         "operand" : [ {
                            "dataType" : "{http://hl7.org/fhir}MedicationStatement",
                            "codeProperty" : "medication",
-                           "codeComparator" : "in",
                            "type" : "Retrieve",
                            "codes" : {
                               "name" : "Opioid Pain Medications",
@@ -2140,7 +2136,6 @@
                         "operand" : [ {
                            "dataType" : "{http://hl7.org/fhir}MedicationRequest",
                            "codeProperty" : "medication",
-                           "codeComparator" : "in",
                            "type" : "Retrieve",
                            "codes" : {
                               "name" : "Adjuvant Analgesic Medications",
@@ -2165,7 +2160,6 @@
                         "operand" : [ {
                            "dataType" : "{http://hl7.org/fhir}MedicationStatement",
                            "codeProperty" : "medication",
-                           "codeComparator" : "in",
                            "type" : "Retrieve",
                            "codes" : {
                               "name" : "Adjuvant Analgesic Medications",
@@ -2301,7 +2295,6 @@
                      "operand" : [ {
                         "dataType" : "{http://hl7.org/fhir}Condition",
                         "codeProperty" : "code",
-                        "codeComparator" : "in",
                         "type" : "Retrieve",
                         "codes" : {
                            "name" : "Major Depression",
@@ -2320,7 +2313,6 @@
                      "operand" : [ {
                         "dataType" : "{http://hl7.org/fhir}Condition",
                         "codeProperty" : "code",
-                        "codeComparator" : "in",
                         "type" : "Retrieve",
                         "codes" : {
                            "name" : "Depression Diagnosis ICD9",
@@ -2347,7 +2339,6 @@
                      "operand" : [ {
                         "dataType" : "{http://hl7.org/fhir}Condition",
                         "codeProperty" : "code",
-                        "codeComparator" : "in",
                         "type" : "Retrieve",
                         "codes" : {
                            "name" : "Anxiety",
@@ -2366,7 +2357,6 @@
                      "operand" : [ {
                         "dataType" : "{http://hl7.org/fhir}Condition",
                         "codeProperty" : "code",
-                        "codeComparator" : "in",
                         "type" : "Retrieve",
                         "codes" : {
                            "name" : "Anxiety Disorders ICD9",
@@ -2389,7 +2379,6 @@
                   "operand" : [ {
                      "dataType" : "{http://hl7.org/fhir}Condition",
                      "codeProperty" : "code",
-                     "codeComparator" : "in",
                      "type" : "Retrieve",
                      "codes" : {
                         "name" : "Substance use disorder",
@@ -2403,7 +2392,6 @@
                   "operand" : [ {
                      "dataType" : "{http://hl7.org/fhir}Condition",
                      "codeProperty" : "code",
-                     "codeComparator" : "in",
                      "type" : "Retrieve",
                      "codes" : {
                         "name" : "Substance Abuse",
@@ -2425,7 +2413,6 @@
                   "operand" : [ {
                      "dataType" : "{http://hl7.org/fhir}Condition",
                      "codeProperty" : "code",
-                     "codeComparator" : "in",
                      "type" : "Retrieve",
                      "codes" : {
                         "name" : "Opioid overdose and poisoning (ICD10CM)",
@@ -2439,7 +2426,6 @@
                   "operand" : [ {
                      "dataType" : "{http://hl7.org/fhir}Condition",
                      "codeProperty" : "code",
-                     "codeComparator" : "in",
                      "type" : "Retrieve",
                      "codes" : {
                         "name" : "Opioid overdose and poisoning (SNOMED)",
@@ -2459,7 +2445,6 @@
                "operand" : [ {
                   "dataType" : "{http://hl7.org/fhir}Condition",
                   "codeProperty" : "code",
-                  "codeComparator" : "in",
                   "type" : "Retrieve",
                   "codes" : {
                      "name" : "Suicide Attempt",
@@ -2482,7 +2467,6 @@
                   "operand" : [ {
                      "dataType" : "{http://hl7.org/fhir}Condition",
                      "codeProperty" : "code",
-                     "codeComparator" : "in",
                      "type" : "Retrieve",
                      "codes" : {
                         "name" : "Sleep-disordered breathing",
@@ -2506,7 +2490,6 @@
                   "operand" : [ {
                      "dataType" : "{http://hl7.org/fhir}Condition",
                      "codeProperty" : "code",
-                     "codeComparator" : "in",
                      "type" : "Retrieve",
                      "codes" : {
                         "name" : "Kidney Failure",
@@ -2532,7 +2515,6 @@
                      "operand" : [ {
                         "dataType" : "{http://hl7.org/fhir}Condition",
                         "codeProperty" : "code",
-                        "codeComparator" : "in",
                         "type" : "Retrieve",
                         "codes" : {
                            "name" : "Chronic Liver Disease",
@@ -2551,7 +2533,6 @@
                      "operand" : [ {
                         "dataType" : "{http://hl7.org/fhir}Condition",
                         "codeProperty" : "code",
-                        "codeComparator" : "in",
                         "type" : "Retrieve",
                         "codes" : {
                            "name" : "Liver Disease",
@@ -2582,7 +2563,6 @@
                         "operand" : [ {
                            "dataType" : "{http://hl7.org/fhir}Condition",
                            "codeProperty" : "code",
-                           "codeComparator" : "in",
                            "type" : "Retrieve",
                            "codes" : {
                               "name" : "Pregnancy",
@@ -2592,7 +2572,6 @@
                      }, {
                         "dataType" : "{http://hl7.org/fhir}Condition",
                         "codeProperty" : "code",
-                        "codeComparator" : "in",
                         "type" : "Retrieve",
                         "codes" : {
                            "name" : "Pregnancy (New ICD10 codes published in 2018 and 2019)",
@@ -2621,7 +2600,6 @@
                   "operand" : [ {
                      "dataType" : "{http://hl7.org/fhir}Observation",
                      "codeProperty" : "code",
-                     "codeComparator" : "~",
                      "type" : "Retrieve",
                      "codes" : {
                         "path" : "codes",
@@ -2812,8 +2790,7 @@
                                                                } ]
                                                             },
                                                             "valueset" : {
-                                                               "name" : "Major Depression",
-                                                               "type" : "ValueSetRef"
+                                                               "name" : "Major Depression"
                                                             }
                                                          }, {
                                                             "type" : "InValueSet",
@@ -2827,8 +2804,7 @@
                                                                } ]
                                                             },
                                                             "valueset" : {
-                                                               "name" : "Depression Diagnosis ICD9",
-                                                               "type" : "ValueSetRef"
+                                                               "name" : "Depression Diagnosis ICD9"
                                                             }
                                                          } ]
                                                       }, {
@@ -2843,8 +2819,7 @@
                                                             } ]
                                                          },
                                                          "valueset" : {
-                                                            "name" : "Anxiety",
-                                                            "type" : "ValueSetRef"
+                                                            "name" : "Anxiety"
                                                          }
                                                       } ]
                                                    }, {
@@ -2859,8 +2834,7 @@
                                                          } ]
                                                       },
                                                       "valueset" : {
-                                                         "name" : "Anxiety Disorders ICD9",
-                                                         "type" : "ValueSetRef"
+                                                         "name" : "Anxiety Disorders ICD9"
                                                       }
                                                    } ]
                                                 }, {
@@ -2875,8 +2849,7 @@
                                                       } ]
                                                    },
                                                    "valueset" : {
-                                                      "name" : "Substance use disorder",
-                                                      "type" : "ValueSetRef"
+                                                      "name" : "Substance use disorder"
                                                    }
                                                 } ]
                                              }, {
@@ -2891,8 +2864,7 @@
                                                    } ]
                                                 },
                                                 "valueset" : {
-                                                   "name" : "Substance Abuse",
-                                                   "type" : "ValueSetRef"
+                                                   "name" : "Substance Abuse"
                                                 }
                                              } ]
                                           }, {
@@ -2907,8 +2879,7 @@
                                                 } ]
                                              },
                                              "valueset" : {
-                                                "name" : "Opioid overdose and poisoning (ICD10CM)",
-                                                "type" : "ValueSetRef"
+                                                "name" : "Opioid overdose and poisoning (ICD10CM)"
                                              }
                                           } ]
                                        }, {
@@ -2923,8 +2894,7 @@
                                              } ]
                                           },
                                           "valueset" : {
-                                             "name" : "Opioid overdose and poisoning (SNOMED)",
-                                             "type" : "ValueSetRef"
+                                             "name" : "Opioid overdose and poisoning (SNOMED)"
                                           }
                                        } ]
                                     }, {
@@ -2939,8 +2909,7 @@
                                           } ]
                                        },
                                        "valueset" : {
-                                          "name" : "Suicide Attempt",
-                                          "type" : "ValueSetRef"
+                                          "name" : "Suicide Attempt"
                                        }
                                     } ]
                                  }, {
@@ -2955,8 +2924,7 @@
                                        } ]
                                     },
                                     "valueset" : {
-                                       "name" : "Sleep-disordered breathing",
-                                       "type" : "ValueSetRef"
+                                       "name" : "Sleep-disordered breathing"
                                     }
                                  } ]
                               }, {
@@ -2971,8 +2939,7 @@
                                     } ]
                                  },
                                  "valueset" : {
-                                    "name" : "Kidney Failure",
-                                    "type" : "ValueSetRef"
+                                    "name" : "Kidney Failure"
                                  }
                               } ]
                            }, {
@@ -2987,8 +2954,7 @@
                                  } ]
                               },
                               "valueset" : {
-                                 "name" : "Chronic Liver Disease",
-                                 "type" : "ValueSetRef"
+                                 "name" : "Chronic Liver Disease"
                               }
                            } ]
                         }, {
@@ -3003,8 +2969,7 @@
                               } ]
                            },
                            "valueset" : {
-                              "name" : "Liver Disease",
-                              "type" : "ValueSetRef"
+                              "name" : "Liver Disease"
                            }
                         } ]
                      }
@@ -3213,8 +3178,7 @@
                                                          } ]
                                                       },
                                                       "valueset" : {
-                                                         "name" : "Major Depression",
-                                                         "type" : "ValueSetRef"
+                                                         "name" : "Major Depression"
                                                       }
                                                    }, {
                                                       "type" : "InValueSet",
@@ -3228,8 +3192,7 @@
                                                          } ]
                                                       },
                                                       "valueset" : {
-                                                         "name" : "Depression Diagnosis ICD9",
-                                                         "type" : "ValueSetRef"
+                                                         "name" : "Depression Diagnosis ICD9"
                                                       }
                                                    } ]
                                                 }, {
@@ -3244,8 +3207,7 @@
                                                       } ]
                                                    },
                                                    "valueset" : {
-                                                      "name" : "Anxiety",
-                                                      "type" : "ValueSetRef"
+                                                      "name" : "Anxiety"
                                                    }
                                                 } ]
                                              }, {
@@ -3260,8 +3222,7 @@
                                                    } ]
                                                 },
                                                 "valueset" : {
-                                                   "name" : "Anxiety Disorders ICD9",
-                                                   "type" : "ValueSetRef"
+                                                   "name" : "Anxiety Disorders ICD9"
                                                 }
                                              } ]
                                           }, {
@@ -3276,8 +3237,7 @@
                                                 } ]
                                              },
                                              "valueset" : {
-                                                "name" : "Substance use disorder",
-                                                "type" : "ValueSetRef"
+                                                "name" : "Substance use disorder"
                                              }
                                           } ]
                                        }, {
@@ -3292,8 +3252,7 @@
                                              } ]
                                           },
                                           "valueset" : {
-                                             "name" : "Substance Abuse",
-                                             "type" : "ValueSetRef"
+                                             "name" : "Substance Abuse"
                                           }
                                        } ]
                                     }, {
@@ -3308,8 +3267,7 @@
                                           } ]
                                        },
                                        "valueset" : {
-                                          "name" : "Opioid overdose and poisoning (ICD10CM)",
-                                          "type" : "ValueSetRef"
+                                          "name" : "Opioid overdose and poisoning (ICD10CM)"
                                        }
                                     } ]
                                  }, {
@@ -3324,8 +3282,7 @@
                                        } ]
                                     },
                                     "valueset" : {
-                                       "name" : "Opioid overdose and poisoning (SNOMED)",
-                                       "type" : "ValueSetRef"
+                                       "name" : "Opioid overdose and poisoning (SNOMED)"
                                     }
                                  } ]
                               }, {
@@ -3340,8 +3297,7 @@
                                     } ]
                                  },
                                  "valueset" : {
-                                    "name" : "Suicide Attempt",
-                                    "type" : "ValueSetRef"
+                                    "name" : "Suicide Attempt"
                                  }
                               } ]
                            }, {
@@ -3356,8 +3312,7 @@
                                  } ]
                               },
                               "valueset" : {
-                                 "name" : "Sleep-disordered breathing",
-                                 "type" : "ValueSetRef"
+                                 "name" : "Sleep-disordered breathing"
                               }
                            } ]
                         }, {
@@ -3372,8 +3327,7 @@
                               } ]
                            },
                            "valueset" : {
-                              "name" : "Kidney Failure",
-                              "type" : "ValueSetRef"
+                              "name" : "Kidney Failure"
                            }
                         } ]
                      }, {
@@ -3388,8 +3342,7 @@
                            } ]
                         },
                         "valueset" : {
-                           "name" : "Chronic Liver Disease",
-                           "type" : "ValueSetRef"
+                           "name" : "Chronic Liver Disease"
                         }
                      } ]
                   }, {
@@ -3404,8 +3357,7 @@
                         } ]
                      },
                      "valueset" : {
-                        "name" : "Liver Disease",
-                        "type" : "ValueSetRef"
+                        "name" : "Liver Disease"
                      }
                   } ]
                },
@@ -3564,102 +3516,63 @@
             "context" : "Patient",
             "accessLevel" : "Public",
             "expression" : {
-               "type" : "If",
-               "condition" : {
-                  "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
-                  "type" : "As",
-                  "operand" : {
-                     "name" : "MostRecentPregnancyObservationIsPositive",
-                     "type" : "ExpressionRef"
-                  }
-               },
-               "then" : {
-                  "type" : "Tuple",
-                  "element" : [ {
-                     "name" : "Name",
-                     "value" : {
-                        "name" : "ConceptText",
-                        "type" : "FunctionRef",
-                        "operand" : [ {
-                           "path" : "code",
-                           "type" : "Property",
-                           "source" : {
-                              "name" : "MostRecentPregnancyObservation",
-                              "type" : "ExpressionRef"
-                           }
-                        } ]
+               "type" : "List",
+               "element" : [ {
+                  "type" : "If",
+                  "condition" : {
+                     "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
+                     "type" : "As",
+                     "operand" : {
+                        "name" : "MostRecentPregnancyObservationIsPositive",
+                        "type" : "ExpressionRef"
                      }
-                  }, {
-                     "name" : "Status",
-                     "value" : {
-                        "name" : "ConceptText",
-                        "type" : "FunctionRef",
-                        "operand" : [ {
-                           "strict" : false,
-                           "type" : "As",
-                           "operand" : {
-                              "path" : "value",
+                  },
+                  "then" : {
+                     "type" : "Tuple",
+                     "element" : [ {
+                        "name" : "Name",
+                        "value" : {
+                           "name" : "ConceptText",
+                           "type" : "FunctionRef",
+                           "operand" : [ {
+                              "path" : "code",
                               "type" : "Property",
                               "source" : {
                                  "name" : "MostRecentPregnancyObservation",
                                  "type" : "ExpressionRef"
                               }
-                           },
-                           "asTypeSpecifier" : {
-                              "name" : "{http://hl7.org/fhir}CodeableConcept",
-                              "type" : "NamedTypeSpecifier"
-                           }
-                        } ]
-                     }
-                  }, {
-                     "name" : "Onset",
-                     "value" : {
-                        "type" : "ToString",
-                        "operand" : {
-                           "type" : "Coalesce",
+                           } ]
+                        }
+                     }, {
+                        "name" : "Status",
+                        "value" : {
+                           "name" : "ConceptText",
+                           "type" : "FunctionRef",
                            "operand" : [ {
-                              "path" : "value",
-                              "type" : "Property",
-                              "source" : {
-                                 "strict" : false,
-                                 "type" : "As",
-                                 "operand" : {
-                                    "path" : "effective",
-                                    "type" : "Property",
-                                    "source" : {
-                                       "name" : "MostRecentPregnancyObservation",
-                                       "type" : "ExpressionRef"
-                                    }
-                                 },
-                                 "asTypeSpecifier" : {
-                                    "name" : "{http://hl7.org/fhir}dateTime",
-                                    "type" : "NamedTypeSpecifier"
+                              "strict" : false,
+                              "type" : "As",
+                              "operand" : {
+                                 "path" : "value",
+                                 "type" : "Property",
+                                 "source" : {
+                                    "name" : "MostRecentPregnancyObservation",
+                                    "type" : "ExpressionRef"
                                  }
+                              },
+                              "asTypeSpecifier" : {
+                                 "name" : "{http://hl7.org/fhir}CodeableConcept",
+                                 "type" : "NamedTypeSpecifier"
                               }
-                           }, {
-                              "path" : "value",
-                              "type" : "Property",
-                              "source" : {
-                                 "strict" : false,
-                                 "type" : "As",
-                                 "operand" : {
-                                    "path" : "effective",
-                                    "type" : "Property",
-                                    "source" : {
-                                       "name" : "MostRecentPregnancyObservation",
-                                       "type" : "ExpressionRef"
-                                    }
-                                 },
-                                 "asTypeSpecifier" : {
-                                    "name" : "{http://hl7.org/fhir}instant",
-                                    "type" : "NamedTypeSpecifier"
-                                 }
-                              }
-                           }, {
-                              "path" : "value",
-                              "type" : "Property",
-                              "source" : {
-                                 "path" : "start",
+                           } ]
+                        }
+                     }, {
+                        "name" : "Onset",
+                        "value" : {
+                           "type" : "ToString",
+                           "operand" : {
+                              "type" : "Coalesce",
+                              "operand" : [ {
+                                 "path" : "value",
                                  "type" : "Property",
                                  "source" : {
                                     "strict" : false,
@@ -3673,284 +3586,329 @@
                                        }
                                     },
                                     "asTypeSpecifier" : {
-                                       "name" : "{http://hl7.org/fhir}Period",
+                                       "name" : "{http://hl7.org/fhir}dateTime",
                                        "type" : "NamedTypeSpecifier"
                                     }
                                  }
-                              }
-                           } ]
-                        }
-                     }
-                  }, {
-                     "name" : "DateRecorded",
-                     "value" : {
-                        "type" : "ToString",
-                        "operand" : {
-                           "path" : "value",
-                           "type" : "Property",
-                           "source" : {
-                              "path" : "issued",
-                              "type" : "Property",
-                              "source" : {
-                                 "name" : "MostRecentPregnancyObservation",
-                                 "type" : "ExpressionRef"
-                              }
+                              }, {
+                                 "path" : "value",
+                                 "type" : "Property",
+                                 "source" : {
+                                    "strict" : false,
+                                    "type" : "As",
+                                    "operand" : {
+                                       "path" : "effective",
+                                       "type" : "Property",
+                                       "source" : {
+                                          "name" : "MostRecentPregnancyObservation",
+                                          "type" : "ExpressionRef"
+                                       }
+                                    },
+                                    "asTypeSpecifier" : {
+                                       "name" : "{http://hl7.org/fhir}instant",
+                                       "type" : "NamedTypeSpecifier"
+                                    }
+                                 }
+                              }, {
+                                 "path" : "value",
+                                 "type" : "Property",
+                                 "source" : {
+                                    "path" : "start",
+                                    "type" : "Property",
+                                    "source" : {
+                                       "strict" : false,
+                                       "type" : "As",
+                                       "operand" : {
+                                          "path" : "effective",
+                                          "type" : "Property",
+                                          "source" : {
+                                             "name" : "MostRecentPregnancyObservation",
+                                             "type" : "ExpressionRef"
+                                          }
+                                       },
+                                       "asTypeSpecifier" : {
+                                          "name" : "{http://hl7.org/fhir}Period",
+                                          "type" : "NamedTypeSpecifier"
+                                       }
+                                    }
+                                 }
+                              } ]
                            }
-                        }
-                     }
-                  }, {
-                     "name" : "Abatement",
-                     "value" : {
-                        "strict" : false,
-                        "type" : "As",
-                        "operand" : {
-                           "type" : "Null"
-                        },
-                        "asTypeSpecifier" : {
-                           "name" : "{urn:hl7-org:elm-types:r1}String",
-                           "type" : "NamedTypeSpecifier"
-                        }
-                     }
-                  }, {
-                     "name" : "Visit",
-                     "value" : {
-                        "strict" : false,
-                        "type" : "As",
-                        "operand" : {
-                           "type" : "Null"
-                        },
-                        "asTypeSpecifier" : {
-                           "type" : "TupleTypeSpecifier",
-                           "element" : [ {
-                              "name" : "Start",
-                              "elementType" : {
-                                 "name" : "{urn:hl7-org:elm-types:r1}String",
-                                 "type" : "NamedTypeSpecifier"
-                              }
-                           }, {
-                              "name" : "End",
-                              "elementType" : {
-                                 "name" : "{urn:hl7-org:elm-types:r1}String",
-                                 "type" : "NamedTypeSpecifier"
-                              }
-                           } ]
-                        }
-                     }
-                  } ]
-               },
-               "else" : {
-                  "type" : "As",
-                  "operand" : {
-                     "type" : "Null"
-                  },
-                  "asTypeSpecifier" : {
-                     "type" : "TupleTypeSpecifier",
-                     "element" : [ {
-                        "name" : "Name",
-                        "type" : {
-                           "name" : "{urn:hl7-org:elm-types:r1}String",
-                           "type" : "NamedTypeSpecifier"
-                        }
-                     }, {
-                        "name" : "Status",
-                        "type" : {
-                           "name" : "{urn:hl7-org:elm-types:r1}String",
-                           "type" : "NamedTypeSpecifier"
-                        }
-                     }, {
-                        "name" : "Onset",
-                        "type" : {
-                           "name" : "{urn:hl7-org:elm-types:r1}String",
-                           "type" : "NamedTypeSpecifier"
                         }
                      }, {
                         "name" : "DateRecorded",
-                        "type" : {
-                           "name" : "{urn:hl7-org:elm-types:r1}String",
-                           "type" : "NamedTypeSpecifier"
+                        "value" : {
+                           "type" : "ToString",
+                           "operand" : {
+                              "path" : "value",
+                              "type" : "Property",
+                              "source" : {
+                                 "path" : "issued",
+                                 "type" : "Property",
+                                 "source" : {
+                                    "name" : "MostRecentPregnancyObservation",
+                                    "type" : "ExpressionRef"
+                                 }
+                              }
+                           }
                         }
                      }, {
                         "name" : "Abatement",
-                        "type" : {
-                           "name" : "{urn:hl7-org:elm-types:r1}String",
-                           "type" : "NamedTypeSpecifier"
+                        "value" : {
+                           "strict" : false,
+                           "type" : "As",
+                           "operand" : {
+                              "type" : "Null"
+                           },
+                           "asTypeSpecifier" : {
+                              "name" : "{urn:hl7-org:elm-types:r1}String",
+                              "type" : "NamedTypeSpecifier"
+                           }
                         }
                      }, {
                         "name" : "Visit",
-                        "type" : {
-                           "type" : "TupleTypeSpecifier",
-                           "element" : [ {
-                              "name" : "Start",
-                              "type" : {
-                                 "name" : "{urn:hl7-org:elm-types:r1}String",
-                                 "type" : "NamedTypeSpecifier"
-                              }
-                           }, {
-                              "name" : "End",
-                              "type" : {
-                                 "name" : "{urn:hl7-org:elm-types:r1}String",
-                                 "type" : "NamedTypeSpecifier"
-                              }
-                           } ]
+                        "value" : {
+                           "strict" : false,
+                           "type" : "As",
+                           "operand" : {
+                              "type" : "Null"
+                           },
+                           "asTypeSpecifier" : {
+                              "type" : "TupleTypeSpecifier",
+                              "element" : [ {
+                                 "name" : "Start",
+                                 "elementType" : {
+                                    "name" : "{urn:hl7-org:elm-types:r1}String",
+                                    "type" : "NamedTypeSpecifier"
+                                 }
+                              }, {
+                                 "name" : "End",
+                                 "elementType" : {
+                                    "name" : "{urn:hl7-org:elm-types:r1}String",
+                                    "type" : "NamedTypeSpecifier"
+                                 }
+                              } ]
+                           }
                         }
                      } ]
+                  },
+                  "else" : {
+                     "type" : "As",
+                     "operand" : {
+                        "type" : "Null"
+                     },
+                     "asTypeSpecifier" : {
+                        "type" : "TupleTypeSpecifier",
+                        "element" : [ {
+                           "name" : "Name",
+                           "type" : {
+                              "name" : "{urn:hl7-org:elm-types:r1}String",
+                              "type" : "NamedTypeSpecifier"
+                           }
+                        }, {
+                           "name" : "Status",
+                           "type" : {
+                              "name" : "{urn:hl7-org:elm-types:r1}String",
+                              "type" : "NamedTypeSpecifier"
+                           }
+                        }, {
+                           "name" : "Onset",
+                           "type" : {
+                              "name" : "{urn:hl7-org:elm-types:r1}String",
+                              "type" : "NamedTypeSpecifier"
+                           }
+                        }, {
+                           "name" : "DateRecorded",
+                           "type" : {
+                              "name" : "{urn:hl7-org:elm-types:r1}String",
+                              "type" : "NamedTypeSpecifier"
+                           }
+                        }, {
+                           "name" : "Abatement",
+                           "type" : {
+                              "name" : "{urn:hl7-org:elm-types:r1}String",
+                              "type" : "NamedTypeSpecifier"
+                           }
+                        }, {
+                           "name" : "Visit",
+                           "type" : {
+                              "type" : "TupleTypeSpecifier",
+                              "element" : [ {
+                                 "name" : "Start",
+                                 "type" : {
+                                    "name" : "{urn:hl7-org:elm-types:r1}String",
+                                    "type" : "NamedTypeSpecifier"
+                                 }
+                              }, {
+                                 "name" : "End",
+                                 "type" : {
+                                    "name" : "{urn:hl7-org:elm-types:r1}String",
+                                    "type" : "NamedTypeSpecifier"
+                                 }
+                              } ]
+                           }
+                        } ]
+                     }
                   }
-               }
+               } ]
             }
          }, {
             "name" : "ReportOlderThan65",
             "context" : "Patient",
             "accessLevel" : "Public",
             "expression" : {
-               "type" : "If",
-               "condition" : {
-                  "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
-                  "type" : "As",
-                  "operand" : {
-                     "name" : "Is65orOlder",
-                     "type" : "ExpressionRef"
-                  }
-               },
-               "then" : {
-                  "type" : "Tuple",
-                  "element" : [ {
-                     "name" : "Name",
-                     "value" : {
-                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
-                        "value" : "65 years or older",
-                        "type" : "Literal"
+               "type" : "List",
+               "element" : [ {
+                  "type" : "If",
+                  "condition" : {
+                     "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
+                     "type" : "As",
+                     "operand" : {
+                        "name" : "Is65orOlder",
+                        "type" : "ExpressionRef"
                      }
-                  }, {
-                     "name" : "Status",
-                     "value" : {
-                        "valueType" : "{urn:hl7-org:elm-types:r1}String",
-                        "value" : "active",
-                        "type" : "Literal"
-                     }
-                  }, {
-                     "name" : "Onset",
-                     "value" : {
-                        "strict" : false,
-                        "type" : "As",
-                        "operand" : {
-                           "type" : "Null"
-                        },
-                        "asTypeSpecifier" : {
-                           "name" : "{urn:hl7-org:elm-types:r1}String",
-                           "type" : "NamedTypeSpecifier"
-                        }
-                     }
-                  }, {
-                     "name" : "DateRecorded",
-                     "value" : {
-                        "strict" : false,
-                        "type" : "As",
-                        "operand" : {
-                           "type" : "Null"
-                        },
-                        "asTypeSpecifier" : {
-                           "name" : "{urn:hl7-org:elm-types:r1}String",
-                           "type" : "NamedTypeSpecifier"
-                        }
-                     }
-                  }, {
-                     "name" : "Abatement",
-                     "value" : {
-                        "strict" : false,
-                        "type" : "As",
-                        "operand" : {
-                           "type" : "Null"
-                        },
-                        "asTypeSpecifier" : {
-                           "name" : "{urn:hl7-org:elm-types:r1}String",
-                           "type" : "NamedTypeSpecifier"
-                        }
-                     }
-                  }, {
-                     "name" : "Visit",
-                     "value" : {
-                        "strict" : false,
-                        "type" : "As",
-                        "operand" : {
-                           "type" : "Null"
-                        },
-                        "asTypeSpecifier" : {
-                           "type" : "TupleTypeSpecifier",
-                           "element" : [ {
-                              "name" : "Start",
-                              "elementType" : {
-                                 "name" : "{urn:hl7-org:elm-types:r1}String",
-                                 "type" : "NamedTypeSpecifier"
-                              }
-                           }, {
-                              "name" : "End",
-                              "elementType" : {
-                                 "name" : "{urn:hl7-org:elm-types:r1}String",
-                                 "type" : "NamedTypeSpecifier"
-                              }
-                           } ]
-                        }
-                     }
-                  } ]
-               },
-               "else" : {
-                  "type" : "As",
-                  "operand" : {
-                     "type" : "Null"
                   },
-                  "asTypeSpecifier" : {
-                     "type" : "TupleTypeSpecifier",
+                  "then" : {
+                     "type" : "Tuple",
                      "element" : [ {
                         "name" : "Name",
-                        "type" : {
-                           "name" : "{urn:hl7-org:elm-types:r1}String",
-                           "type" : "NamedTypeSpecifier"
+                        "value" : {
+                           "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                           "value" : "65 years or older",
+                           "type" : "Literal"
                         }
                      }, {
                         "name" : "Status",
-                        "type" : {
-                           "name" : "{urn:hl7-org:elm-types:r1}String",
-                           "type" : "NamedTypeSpecifier"
+                        "value" : {
+                           "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                           "value" : "active",
+                           "type" : "Literal"
                         }
                      }, {
                         "name" : "Onset",
-                        "type" : {
-                           "name" : "{urn:hl7-org:elm-types:r1}String",
-                           "type" : "NamedTypeSpecifier"
+                        "value" : {
+                           "strict" : false,
+                           "type" : "As",
+                           "operand" : {
+                              "type" : "Null"
+                           },
+                           "asTypeSpecifier" : {
+                              "name" : "{urn:hl7-org:elm-types:r1}String",
+                              "type" : "NamedTypeSpecifier"
+                           }
                         }
                      }, {
                         "name" : "DateRecorded",
-                        "type" : {
-                           "name" : "{urn:hl7-org:elm-types:r1}String",
-                           "type" : "NamedTypeSpecifier"
+                        "value" : {
+                           "strict" : false,
+                           "type" : "As",
+                           "operand" : {
+                              "type" : "Null"
+                           },
+                           "asTypeSpecifier" : {
+                              "name" : "{urn:hl7-org:elm-types:r1}String",
+                              "type" : "NamedTypeSpecifier"
+                           }
                         }
                      }, {
                         "name" : "Abatement",
-                        "type" : {
-                           "name" : "{urn:hl7-org:elm-types:r1}String",
-                           "type" : "NamedTypeSpecifier"
+                        "value" : {
+                           "strict" : false,
+                           "type" : "As",
+                           "operand" : {
+                              "type" : "Null"
+                           },
+                           "asTypeSpecifier" : {
+                              "name" : "{urn:hl7-org:elm-types:r1}String",
+                              "type" : "NamedTypeSpecifier"
+                           }
                         }
                      }, {
                         "name" : "Visit",
-                        "type" : {
-                           "type" : "TupleTypeSpecifier",
-                           "element" : [ {
-                              "name" : "Start",
-                              "type" : {
-                                 "name" : "{urn:hl7-org:elm-types:r1}String",
-                                 "type" : "NamedTypeSpecifier"
-                              }
-                           }, {
-                              "name" : "End",
-                              "type" : {
-                                 "name" : "{urn:hl7-org:elm-types:r1}String",
-                                 "type" : "NamedTypeSpecifier"
-                              }
-                           } ]
+                        "value" : {
+                           "strict" : false,
+                           "type" : "As",
+                           "operand" : {
+                              "type" : "Null"
+                           },
+                           "asTypeSpecifier" : {
+                              "type" : "TupleTypeSpecifier",
+                              "element" : [ {
+                                 "name" : "Start",
+                                 "elementType" : {
+                                    "name" : "{urn:hl7-org:elm-types:r1}String",
+                                    "type" : "NamedTypeSpecifier"
+                                 }
+                              }, {
+                                 "name" : "End",
+                                 "elementType" : {
+                                    "name" : "{urn:hl7-org:elm-types:r1}String",
+                                    "type" : "NamedTypeSpecifier"
+                                 }
+                              } ]
+                           }
                         }
                      } ]
+                  },
+                  "else" : {
+                     "type" : "As",
+                     "operand" : {
+                        "type" : "Null"
+                     },
+                     "asTypeSpecifier" : {
+                        "type" : "TupleTypeSpecifier",
+                        "element" : [ {
+                           "name" : "Name",
+                           "type" : {
+                              "name" : "{urn:hl7-org:elm-types:r1}String",
+                              "type" : "NamedTypeSpecifier"
+                           }
+                        }, {
+                           "name" : "Status",
+                           "type" : {
+                              "name" : "{urn:hl7-org:elm-types:r1}String",
+                              "type" : "NamedTypeSpecifier"
+                           }
+                        }, {
+                           "name" : "Onset",
+                           "type" : {
+                              "name" : "{urn:hl7-org:elm-types:r1}String",
+                              "type" : "NamedTypeSpecifier"
+                           }
+                        }, {
+                           "name" : "DateRecorded",
+                           "type" : {
+                              "name" : "{urn:hl7-org:elm-types:r1}String",
+                              "type" : "NamedTypeSpecifier"
+                           }
+                        }, {
+                           "name" : "Abatement",
+                           "type" : {
+                              "name" : "{urn:hl7-org:elm-types:r1}String",
+                              "type" : "NamedTypeSpecifier"
+                           }
+                        }, {
+                           "name" : "Visit",
+                           "type" : {
+                              "type" : "TupleTypeSpecifier",
+                              "element" : [ {
+                                 "name" : "Start",
+                                 "type" : {
+                                    "name" : "{urn:hl7-org:elm-types:r1}String",
+                                    "type" : "NamedTypeSpecifier"
+                                 }
+                              }, {
+                                 "name" : "End",
+                                 "type" : {
+                                    "name" : "{urn:hl7-org:elm-types:r1}String",
+                                    "type" : "NamedTypeSpecifier"
+                                 }
+                              } ]
+                           }
+                        } ]
+                     }
                   }
-               }
+               } ]
             }
          }, {
             "name" : "ReportRiskFactorsForOpioidRelatedHarms",
@@ -3985,11 +3943,8 @@
                               "type" : "ExpressionRef"
                            } ]
                         }, {
-                           "type" : "ToList",
-                           "operand" : {
-                              "name" : "ReportOlderThan65",
-                              "type" : "ExpressionRef"
-                           }
+                           "name" : "ReportOlderThan65",
+                           "type" : "ExpressionRef"
                         } ]
                      }
                   } ],
@@ -4013,17 +3968,11 @@
                         }, {
                            "type" : "Union",
                            "operand" : [ {
-                              "type" : "ToList",
-                              "operand" : {
-                                 "name" : "ReportOlderThan65",
-                                 "type" : "ExpressionRef"
-                              }
+                              "name" : "ReportOlderThan65",
+                              "type" : "ExpressionRef"
                            }, {
-                              "type" : "ToList",
-                              "operand" : {
-                                 "name" : "ReportMostRecentPositivePregnancyObservation",
-                                 "type" : "ExpressionRef"
-                              }
+                              "name" : "ReportMostRecentPositivePregnancyObservation",
+                              "type" : "ExpressionRef"
                            } ]
                         } ]
                      }
@@ -4115,7 +4064,6 @@
                   "operand" : [ {
                      "dataType" : "{http://hl7.org/fhir}Observation",
                      "codeProperty" : "code",
-                     "codeComparator" : "~",
                      "type" : "Retrieve",
                      "codes" : {
                         "path" : "codes",
@@ -4250,7 +4198,6 @@
                      "operand" : [ {
                         "dataType" : "{http://hl7.org/fhir}Observation",
                         "codeProperty" : "code",
-                        "codeComparator" : "~",
                         "type" : "Retrieve",
                         "codes" : {
                            "path" : "codes",
@@ -4263,7 +4210,6 @@
                      }, {
                         "dataType" : "{http://hl7.org/fhir}Observation",
                         "codeProperty" : "code",
-                        "codeComparator" : "~",
                         "type" : "Retrieve",
                         "codes" : {
                            "path" : "codes",
@@ -4626,7 +4572,6 @@
                      "operand" : [ {
                         "dataType" : "{http://hl7.org/fhir}Observation",
                         "codeProperty" : "code",
-                        "codeComparator" : "~",
                         "type" : "Retrieve",
                         "codes" : {
                            "path" : "codes",
@@ -4639,7 +4584,6 @@
                      }, {
                         "dataType" : "{http://hl7.org/fhir}Observation",
                         "codeProperty" : "code",
-                        "codeComparator" : "~",
                         "type" : "Retrieve",
                         "codes" : {
                            "path" : "codes",
@@ -4773,7 +4717,6 @@
                   "operand" : [ {
                      "dataType" : "{http://hl7.org/fhir}MedicationRequest",
                      "codeProperty" : "medication",
-                     "codeComparator" : "in",
                      "type" : "Retrieve",
                      "codes" : {
                         "name" : "Opioid Pain Medications",
@@ -4801,7 +4744,6 @@
                   "operand" : [ {
                      "dataType" : "{http://hl7.org/fhir}MedicationStatement",
                      "codeProperty" : "medication",
-                     "codeComparator" : "in",
                      "type" : "Retrieve",
                      "codes" : {
                         "name" : "Opioid Pain Medications",
@@ -5333,7 +5275,6 @@
                   "operand" : [ {
                      "dataType" : "{http://hl7.org/fhir}MedicationRequest",
                      "codeProperty" : "medication",
-                     "codeComparator" : "in",
                      "type" : "Retrieve",
                      "codes" : {
                         "name" : "Non opiod pain medications",
@@ -5361,7 +5302,6 @@
                   "operand" : [ {
                      "dataType" : "{http://hl7.org/fhir}MedicationStatement",
                      "codeProperty" : "medication",
-                     "codeComparator" : "in",
                      "type" : "Retrieve",
                      "codes" : {
                         "name" : "Non opiod pain medications",
@@ -5893,7 +5833,6 @@
                   "operand" : [ {
                      "dataType" : "{http://hl7.org/fhir}Procedure",
                      "codeProperty" : "code",
-                     "codeComparator" : "in",
                      "type" : "Retrieve",
                      "codes" : {
                         "name" : "Non pharmacologic treatments for chronic pain",
@@ -6009,7 +5948,6 @@
                   "operand" : [ {
                      "dataType" : "{http://hl7.org/fhir}ServiceRequest",
                      "codeProperty" : "code",
-                     "codeComparator" : "in",
                      "type" : "Retrieve",
                      "codes" : {
                         "name" : "Non pharmacologic treatments for chronic pain",
@@ -6122,7 +6060,6 @@
                   "operand" : [ {
                      "dataType" : "{http://hl7.org/fhir}MedicationRequest",
                      "codeProperty" : "medication",
-                     "codeComparator" : "in",
                      "type" : "Retrieve",
                      "codes" : {
                         "name" : "Stool softeners and laxatives",
@@ -6150,7 +6087,6 @@
                   "operand" : [ {
                      "dataType" : "{http://hl7.org/fhir}MedicationStatement",
                      "codeProperty" : "medication",
-                     "codeComparator" : "in",
                      "type" : "Retrieve",
                      "codes" : {
                         "name" : "Stool softeners and laxatives",
@@ -6409,7 +6345,6 @@
                      "operand" : [ {
                         "dataType" : "{http://hl7.org/fhir}Observation",
                         "codeProperty" : "code",
-                        "codeComparator" : "~",
                         "type" : "Retrieve",
                         "codes" : {
                            "path" : "codes",
@@ -6432,103 +6367,227 @@
             "context" : "Patient",
             "accessLevel" : "Public",
             "expression" : {
-               "type" : "If",
-               "condition" : {
-                  "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
-                  "type" : "As",
-                  "operand" : {
-                     "type" : "IsNull",
+               "type" : "List",
+               "element" : [ {
+                  "type" : "If",
+                  "condition" : {
+                     "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
+                     "type" : "As",
                      "operand" : {
-                        "name" : "MostRecentMME",
-                        "type" : "ExpressionRef"
+                        "type" : "IsNull",
+                        "operand" : {
+                           "name" : "MostRecentMME",
+                           "type" : "ExpressionRef"
+                        }
                      }
-                  }
-               },
-               "then" : {
-                  "type" : "As",
-                  "operand" : {
-                     "type" : "Null"
                   },
-                  "asTypeSpecifier" : {
-                     "type" : "TupleTypeSpecifier",
-                     "element" : [ {
-                        "name" : "Name",
-                        "type" : {
-                           "name" : "{urn:hl7-org:elm-types:r1}String",
-                           "type" : "NamedTypeSpecifier"
-                        }
-                     }, {
-                        "name" : "Result",
-                        "type" : {
-                           "name" : "{urn:hl7-org:elm-types:r1}String",
-                           "type" : "NamedTypeSpecifier"
-                        }
-                     }, {
-                        "name" : "Date",
-                        "type" : {
-                           "name" : "{urn:hl7-org:elm-types:r1}String",
-                           "type" : "NamedTypeSpecifier"
-                        }
-                     } ]
-                  }
-               },
-               "else" : {
-                  "type" : "Query",
-                  "source" : [ {
-                     "alias" : "M",
-                     "expression" : {
-                        "name" : "MostRecentMME",
-                        "type" : "ExpressionRef"
-                     }
-                  } ],
-                  "relationship" : [ ],
-                  "return" : {
-                     "expression" : {
-                        "type" : "Tuple",
+                  "then" : {
+                     "type" : "As",
+                     "operand" : {
+                        "type" : "Null"
+                     },
+                     "asTypeSpecifier" : {
+                        "type" : "TupleTypeSpecifier",
                         "element" : [ {
                            "name" : "Name",
-                           "value" : {
-                              "name" : "ConceptText",
-                              "type" : "FunctionRef",
-                              "operand" : [ {
-                                 "path" : "code",
-                                 "scope" : "M",
-                                 "type" : "Property"
-                              } ]
+                           "type" : {
+                              "name" : "{urn:hl7-org:elm-types:r1}String",
+                              "type" : "NamedTypeSpecifier"
                            }
                         }, {
                            "name" : "Result",
-                           "value" : {
-                              "name" : "QuantityText",
-                              "type" : "FunctionRef",
-                              "operand" : [ {
-                                 "strict" : false,
-                                 "type" : "As",
-                                 "operand" : {
-                                    "path" : "value",
-                                    "scope" : "M",
-                                    "type" : "Property"
-                                 },
-                                 "asTypeSpecifier" : {
-                                    "name" : "{http://hl7.org/fhir}Quantity",
-                                    "type" : "NamedTypeSpecifier"
-                                 }
-                              } ]
+                           "type" : {
+                              "name" : "{urn:hl7-org:elm-types:r1}String",
+                              "type" : "NamedTypeSpecifier"
                            }
                         }, {
                            "name" : "Date",
-                           "value" : {
-                              "name" : "ObservationDate",
-                              "type" : "FunctionRef",
-                              "operand" : [ {
-                                 "name" : "M",
-                                 "type" : "AliasRef"
-                              } ]
+                           "type" : {
+                              "name" : "{urn:hl7-org:elm-types:r1}String",
+                              "type" : "NamedTypeSpecifier"
                            }
                         } ]
                      }
+                  },
+                  "else" : {
+                     "type" : "Query",
+                     "source" : [ {
+                        "alias" : "M",
+                        "expression" : {
+                           "name" : "MostRecentMME",
+                           "type" : "ExpressionRef"
+                        }
+                     } ],
+                     "relationship" : [ ],
+                     "return" : {
+                        "expression" : {
+                           "type" : "Tuple",
+                           "element" : [ {
+                              "name" : "Name",
+                              "value" : {
+                                 "name" : "ConceptText",
+                                 "type" : "FunctionRef",
+                                 "operand" : [ {
+                                    "path" : "code",
+                                    "scope" : "M",
+                                    "type" : "Property"
+                                 } ]
+                              }
+                           }, {
+                              "name" : "Result",
+                              "value" : {
+                                 "name" : "QuantityText",
+                                 "type" : "FunctionRef",
+                                 "operand" : [ {
+                                    "strict" : false,
+                                    "type" : "As",
+                                    "operand" : {
+                                       "path" : "value",
+                                       "scope" : "M",
+                                       "type" : "Property"
+                                    },
+                                    "asTypeSpecifier" : {
+                                       "name" : "{http://hl7.org/fhir}Quantity",
+                                       "type" : "NamedTypeSpecifier"
+                                    }
+                                 } ]
+                              }
+                           }, {
+                              "name" : "Date",
+                              "value" : {
+                                 "name" : "ObservationDate",
+                                 "type" : "FunctionRef",
+                                 "operand" : [ {
+                                    "name" : "M",
+                                    "type" : "AliasRef"
+                                 } ]
+                              }
+                           } ]
+                        }
+                     }
                   }
-               }
+               } ]
+            }
+         }, {
+            "name" : "ActiveOpioidMedications",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "name" : "ActiveMedicationRequest",
+               "libraryName" : "C3F",
+               "type" : "FunctionRef",
+               "operand" : [ {
+                  "dataType" : "{http://hl7.org/fhir}MedicationRequest",
+                  "codeProperty" : "medication",
+                  "type" : "Retrieve",
+                  "codes" : {
+                     "name" : "Opioid Pain Medications",
+                     "type" : "ValueSetRef"
+                  }
+               } ]
+            }
+         }, {
+            "name" : "CurrentMME",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "name" : "TotalMME",
+               "libraryName" : "MMECalculator",
+               "type" : "FunctionRef",
+               "operand" : [ {
+                  "name" : "ActiveOpioidMedications",
+                  "type" : "ExpressionRef"
+               } ]
+            }
+         }, {
+            "name" : "ReportCurrentMME",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "type" : "List",
+               "element" : [ {
+                  "type" : "If",
+                  "condition" : {
+                     "asType" : "{urn:hl7-org:elm-types:r1}Boolean",
+                     "type" : "As",
+                     "operand" : {
+                        "type" : "IsNull",
+                        "operand" : {
+                           "name" : "CurrentMME",
+                           "type" : "ExpressionRef"
+                        }
+                     }
+                  },
+                  "then" : {
+                     "type" : "As",
+                     "operand" : {
+                        "type" : "Null"
+                     },
+                     "asTypeSpecifier" : {
+                        "type" : "TupleTypeSpecifier",
+                        "element" : [ {
+                           "name" : "Name",
+                           "type" : {
+                              "name" : "{urn:hl7-org:elm-types:r1}String",
+                              "type" : "NamedTypeSpecifier"
+                           }
+                        }, {
+                           "name" : "Result",
+                           "type" : {
+                              "name" : "{urn:hl7-org:elm-types:r1}String",
+                              "type" : "NamedTypeSpecifier"
+                           }
+                        }, {
+                           "name" : "Date",
+                           "type" : {
+                              "name" : "{urn:hl7-org:elm-types:r1}String",
+                              "type" : "NamedTypeSpecifier"
+                           }
+                        } ]
+                     }
+                  },
+                  "else" : {
+                     "type" : "Query",
+                     "source" : [ {
+                        "alias" : "M",
+                        "expression" : {
+                           "name" : "CurrentMME",
+                           "type" : "ExpressionRef"
+                        }
+                     } ],
+                     "relationship" : [ ],
+                     "return" : {
+                        "expression" : {
+                           "type" : "Tuple",
+                           "element" : [ {
+                              "name" : "Name",
+                              "value" : {
+                                 "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                                 "value" : "Current Milligram Morephine Equivalent",
+                                 "type" : "Literal"
+                              }
+                           }, {
+                              "name" : "Result",
+                              "value" : {
+                                 "type" : "ToString",
+                                 "operand" : {
+                                    "name" : "M",
+                                    "type" : "AliasRef"
+                                 }
+                              }
+                           }, {
+                              "name" : "Date",
+                              "value" : {
+                                 "type" : "ToString",
+                                 "operand" : {
+                                    "type" : "Today"
+                                 }
+                              }
+                           } ]
+                        }
+                     }
+                  }
+               } ]
             }
          }, {
             "name" : "UrineDrugScreens",
@@ -6545,7 +6604,6 @@
                   "operand" : [ {
                      "dataType" : "{http://hl7.org/fhir}Observation",
                      "codeProperty" : "code",
-                     "codeComparator" : "in",
                      "type" : "Retrieve",
                      "codes" : {
                         "name" : "Urine drug screen for pain management",
@@ -6690,7 +6748,6 @@
                   "operand" : [ {
                      "dataType" : "{http://hl7.org/fhir}MedicationRequest",
                      "codeProperty" : "medication",
-                     "codeComparator" : "in",
                      "type" : "Retrieve",
                      "codes" : {
                         "name" : "Benzodiazepine medications",
@@ -6718,7 +6775,6 @@
                   "operand" : [ {
                      "dataType" : "{http://hl7.org/fhir}MedicationStatement",
                      "codeProperty" : "medication",
-                     "codeComparator" : "in",
                      "type" : "Retrieve",
                      "codes" : {
                         "name" : "Benzodiazepine medications",
@@ -6975,7 +7031,6 @@
                      "operand" : [ {
                         "dataType" : "{http://hl7.org/fhir}MedicationRequest",
                         "codeProperty" : "medication",
-                        "codeComparator" : "in",
                         "type" : "Retrieve",
                         "codes" : {
                            "name" : "Carisoprodol",
@@ -6984,7 +7039,6 @@
                      }, {
                         "dataType" : "{http://hl7.org/fhir}MedicationRequest",
                         "codeProperty" : "medication",
-                        "codeComparator" : "in",
                         "type" : "Retrieve",
                         "codes" : {
                            "name" : "Aspirin / Carisoprodol",
@@ -7015,7 +7069,6 @@
                      "operand" : [ {
                         "dataType" : "{http://hl7.org/fhir}MedicationStatement",
                         "codeProperty" : "medication",
-                        "codeComparator" : "in",
                         "type" : "Retrieve",
                         "codes" : {
                            "name" : "Carisoprodol",
@@ -7024,7 +7077,6 @@
                      }, {
                         "dataType" : "{http://hl7.org/fhir}MedicationStatement",
                         "codeProperty" : "medication",
-                        "codeComparator" : "in",
                         "type" : "Retrieve",
                         "codes" : {
                            "name" : "Aspirin / Carisoprodol",
@@ -7276,7 +7328,6 @@
                "operand" : [ {
                   "dataType" : "{http://hl7.org/fhir}MedicationRequest",
                   "codeProperty" : "medication",
-                  "codeComparator" : "in",
                   "type" : "Retrieve",
                   "codes" : {
                      "name" : "Naloxone medications",
@@ -7295,7 +7346,6 @@
                "operand" : [ {
                   "dataType" : "{http://hl7.org/fhir}MedicationStatement",
                   "codeProperty" : "medication",
-                  "codeComparator" : "in",
                   "type" : "Retrieve",
                   "codes" : {
                      "name" : "Naloxone medications",
@@ -7549,7 +7599,6 @@
                         "operand" : [ {
                            "dataType" : "{http://hl7.org/fhir}Observation",
                            "codeProperty" : "code",
-                           "codeComparator" : "in",
                            "type" : "Retrieve",
                            "codes" : {
                               "name" : "Risk assessments relevant to pain management",
@@ -7558,7 +7607,6 @@
                         }, {
                            "dataType" : "{http://hl7.org/fhir}Observation",
                            "codeProperty" : "code",
-                           "codeComparator" : "~",
                            "type" : "Retrieve",
                            "codes" : {
                               "path" : "codes",
@@ -7572,7 +7620,6 @@
                      }, {
                         "dataType" : "{http://hl7.org/fhir}Observation",
                         "codeProperty" : "code",
-                        "codeComparator" : "~",
                         "type" : "Retrieve",
                         "codes" : {
                            "path" : "codes",
@@ -7970,6 +8017,12 @@
                         "name" : "MostRecentMME",
                         "value" : {
                            "name" : "ReportMostRecentMME",
+                           "type" : "ExpressionRef"
+                        }
+                     }, {
+                        "name" : "CurrentMME",
+                        "value" : {
+                           "name" : "ReportCurrentMME",
                            "type" : "ExpressionRef"
                         }
                      }, {

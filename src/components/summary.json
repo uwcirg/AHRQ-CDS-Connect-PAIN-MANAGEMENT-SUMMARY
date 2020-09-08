@@ -510,7 +510,7 @@
     "sections":[
       {
         "name": "Most Recent MED",
-        "dataKey": "MostRecentMME",
+        "dataKey": "CurrentMME",
         "dataKeySource": "RiskConsiderations",
         "guideline": [
           {
@@ -536,7 +536,7 @@
           {
             "headers": {
               "Name": "Name",
-              "Result": { "key": "Result", "formatter": "quantityFormat" },
+              "Result": { "key": "Result", "formatter": "stringSubstitutionFormat", "formatterArguments": [""] },
               "Date": { "key": "Date", "formatter": "datishFormat" }
             },
             "flags": [

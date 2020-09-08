@@ -33,9 +33,11 @@
 //    Removed inclusion criteria excepting age 18
 //    Added opioid overdose for ICD-10 and SNOMED
 //    Changed lookback for opioids, non-opioids, and benzos from 2 to 100 years
-//Update 20200227
+// Update 20200227
 //    Added carisoprodol as another risk factor for co-prescribing with opioids
 //    Also removed an old superfluous function
+// Update 20200819
+//    Updated to include MME Calculation
 
 library Factors_to_Consider_in_Managing_Chronic_Pain_FHIRv400 version '1.0.0'
 
@@ -50,6 +52,8 @@ using FHIR version '4.0.0'
 include CDS_Connect_Commons_for_FHIRv400 version '1.0.1' called C3F
 // The FHIRHelpers library provides common functions for simplifying interaction w/ the FHIR R4 data model.
 include FHIRHelpers version '4.0.0' called FHIRHelpers
+// The MMECalculator library is used to compute the patient's MME/MED 
+include MMECalculator version '3.0.0' called MMECalculator
 
 // # Value sets and codes #
 
@@ -644,6 +648,7 @@ define ReportEncounterRiskFactorsForOpioidRelatedHarms:
 // Shape the pregnancy Observation as a Condition, since this is the backup approach for detecting a pregnancy in case
 // there are no active Conditions found.
 define ReportMostRecentPositivePregnancyObservation:
+{
   if MostRecentPregnancyObservationIsPositive then
     {
       Name: ConceptText(MostRecentPregnancyObservation.code),
@@ -659,9 +664,11 @@ define ReportMostRecentPositivePregnancyObservation:
     }
   else
     null
+}
 
 // Shape the case of being 65 or older as a Condition for the purposes of building the summary.
 define ReportOlderThan65:
+{
   if Is65orOlder then
     {
       Name: '65 years or older',
@@ -673,6 +680,7 @@ define ReportOlderThan65:
     }
   else
     null
+}
 
 define ReportRiskFactorsForOpioidRelatedHarms:
   // If a pregnancy Condition is present, use that.
@@ -962,12 +970,12 @@ define ReportStoolSoftenersAndLaxatives:
 
 // RISK CONSIDERATIONS
 
-// MME (MOST RECENT w/ lookback 6 months) - amount and date
-
+// MME if it already exists in the system
 define MostRecentMME:
   C3F.MostRecent(C3F.Verified(C3F.ObservationLookBack([Observation: "Morphine Milligram Equivalent (MME)"], 6 months)))
 
 define ReportMostRecentMME:
+{
   if MostRecentMME is null
   then null
   else
@@ -977,6 +985,27 @@ define ReportMostRecentMME:
       Result: QuantityText(M.value as FHIR.Quantity),
       Date:   ObservationDate(M)
     }
+}
+
+//MME Calculation
+define ActiveOpioidMedications:
+  C3F.ActiveMedicationRequest([MedicationRequest: "Opioid Pain Medications"])
+
+define CurrentMME:
+  MMECalculator.TotalMME(ActiveOpioidMedications)
+
+define ReportCurrentMME:
+{
+  if CurrentMME is null then
+    null
+  else
+    (CurrentMME) M
+    return {
+      Name: 'Current Milligram Morephine Equivalent',
+      Result: ToString(M),
+      Date: ToString(Today())
+    }
+}
 
 // Urine drug screen - dates and results (all screens w/ lookback of 1 year)
 
@@ -1192,6 +1221,7 @@ define Summary: {
   },
   RiskConsiderations: {
     MostRecentMME: ReportMostRecentMME,
+    CurrentMME: ReportCurrentMME,
     UrineDrugScreens: ReportUrineDrugScreens,
     BenzodiazepineMedications: ReportBenzodiazepineMedications,
     CarisoprodolMedications: ReportCarisoprodolMedications,
