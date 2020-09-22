@@ -1,0 +1,9 @@
+---
+version: "3.4"
+services:
+  cql:
+    build:
+      context: .
+      dockerfile: Dockerfile.cql
+    volumes:
+      - ./src/cql:/opt/cql
