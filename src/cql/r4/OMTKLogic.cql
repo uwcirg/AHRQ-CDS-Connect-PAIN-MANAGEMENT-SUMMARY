@@ -3,20 +3,24 @@ library OMTKLogic version '3.0.0'
 /*
 This library provides functionality for calculating Milligram Morphine
 Equivalents (MME) for opioid medications, as described in the CDC Opioid
-Prescribing Guideline.
+Prescribing Guideline *with the modifications made to meet the AMDG converstion standards*.
+
 The functionality in this library was developed based on the Java-based
 implementation described [here](http://build.fhir.org/ig/cqframework/opioid-cds-r4/service-documentation.html#solution-component-3-core-logic-processing-java-class),
 as well as the MME conversion calculation published as part of the CDC Opioid
 Prescribing Guideline.
+
 This version of the OMTKLogic library uses the OMTKData library as the
 source for drug ingredient and strength information, rather than the
 OMTK data source. This library has no external dependencies and so
 can run in an environment that supports pure CQL.
 NOTE: For performance, all terminology comparisons in this library use
 direct integer comparison of the RxNorm codes.
+
 This product uses publicly available data courtesy of the U.S. National Library of Medicine (NLM),
 National Institutes of Health, Department of Health and Human Services; NLM is not responsible for
 the product and does not endorse or recommend this or any other product.
+
 Nelson SJ, Zeng K, Kilbourne J, Powell T, Moore R. Normalized names for clinical drugs: RxNorm at 6 years.
 J Am Med Inform Assoc. 2011 Jul-Aug;18(4)441-8. doi: 10.1136/amiajnl-2011-000116.
 Epub 2011 Apr 21. PubMed PMID: 21515544; PubMed Central PMCID: PMC3128404.
@@ -75,6 +79,29 @@ define function ToDaily(frequency Integer, period Quantity):
 
 /*
   Returns the conversion factor for the given ingredient
+Conversion factors are extrapolated from the 2015 AMDG Opioid Guideline, with conversion
+factors for the various forms of Fentanyl from the CDC and CMS guidelines listed below. 
+Note: some medications are not included in the AMDG guidelines and are thus not included
+in the conversion factors.
+
+Morphine Equivalent Dose for Selected Opioids from the 2015 AMDG Opioid Guideline
+http://www.agencymeddirectors.wa.gov/Files/2015AMDGOpioidGuideline.pdf
+Codeine 0.15
+Fentanyl transdermal 
+Hydrocodone 1
+Hydromorphone 4
+Morphine 1
+Oxycodone 1.5
+Trapentadol 0.4
+Tramadol 0.1
+
+Methadone
+  1-20 mg/d 4
+  21-40 mg/d 8
+  41-60 mg/d 10
+  >60 mg/d 12
+
+
 CDC Guidance:
 https://www.cdc.gov/drugoverdose/pdf/calculating_total_daily_dose-a.pdf
 https://www.cdc.gov/drugoverdose/modules/data-files.html
@@ -115,13 +142,13 @@ define function GetConversionFactor(ingredientCode Code, dailyDose Quantity, dos
     when 1191 then 0 /*	Aspirin */
     when 1223 then 0 /*	Atropine */
     when 1767 then 0 /*	Brompheniramine */
-    when 1819 then ( /*	Buprenorphine */
-      case
+    /*when 1819 then ( /*	Buprenorphine */ 
+      /*case
         when ToInteger(doseFormCode.code) = 316987 then 12.6 /* Transdermal system */
-        else 30 /* Tablet or Film (or Film in MCG) */
-      end
-    )
-    when 1841 then 7 /*	Butorphanol */
+        /*else 30 /* Tablet or Film (or Film in MCG) */
+      /*end
+    )*/
+    /*when 1841 then 7 /*	Butorphanol */
     when 1886 then 0 /*	Caffeine */
     when 2101 then 0 /*	Carisoprodol */
     when 2354 then 0 /*	chlorcyclizine */
@@ -142,8 +169,8 @@ define function GetConversionFactor(ingredientCode Code, dailyDose Quantity, dos
     when 5489 then 1 /*	Hydrocodone */
     when 5640 then 0 /*	Ibuprofen */
     when 6102 then 0 /*	Kaolin */
-    when 6378 then 11 /*	Levorphanol (NOTE: Given as Levorphanol tartrate in the CDC conversion table) */
-    when 6754 then 0.1 /*	Meperidine */
+    /*when 6378 then 11 /*	Levorphanol (NOTE: Given as Levorphanol tartrate in the CDC conversion table) */
+    /*when 6754 then 0.1 /*	Meperidine */
     when 6813 then ( /*	Methadone */
       case
         when dailyDose.value between 1 and 20 then 4
@@ -158,7 +185,7 @@ define function GetConversionFactor(ingredientCode Code, dailyDose Quantity, dos
     when 7243 then 0 /*	Naltrexone */
     when 7804 then 1.5 /*	Oxycodone */
     when 7814 then 3 /*	Oxymorphone */
-    when 8001 then 0.37 /*	Pentazocine */
+    /*when 8001 then 0.37 /*	Pentazocine */
     when 8163 then 0 /*	Phenylephrine */
     when 8175 then 0 /*	Phenylpropanolamine */
     when 8745 then 0 /*	Promethazine */
@@ -170,10 +197,10 @@ define function GetConversionFactor(ingredientCode Code, dailyDose Quantity, dos
     when 19860 then 0 /*	butalbital */
     when 22696 then 0 /*	dexbrompheniramine */
     when 22697 then 0 /*	dexchlorpheniramine */
-    when 23088 then 0.25 /*	dihydrocodeine */
+    /*when 23088 then 0.25 /*	dihydrocodeine */
     when 27084 then 0 /*	homatropine */
     when 35780 then 0 /*	ropivacaine */
-    when 237005 then 8 /*	Levomethadyl (NOTE: given as Levomethadyl acetate in the CDC conversion table) */
+    /*when 237005 then 8 /*	Levomethadyl (NOTE: given as Levomethadyl acetate in the CDC conversion table) */
     when 636827 then 0 /*	guaiacolsulfonate */
     when 787390 then 0.4 /*	tapentadol */
     else Message(null, true, 'OMTKLogic.GetConversionFactor.UnknownIngredientCode', ErrorLevel, 'Unknown ingredient code: ' & ingredientCode.code)
