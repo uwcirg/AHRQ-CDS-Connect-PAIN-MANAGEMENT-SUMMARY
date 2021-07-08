@@ -18,7 +18,7 @@
 
   &.inclusion-banner,
   &.exclusion-banner {
-    padding: 16px 40px 4px 24px;
+    padding: 12px 56px 12px 24px;
     text-align: left;
     background-color: $color-beige;
     position: relative;
@@ -29,6 +29,9 @@
 
     strong {
       color: $color-orange;
+    }
+    .title {
+      margin-right: 4px
     }
 
     .warning-inside {
@@ -49,7 +52,7 @@
       transform: rotate(0);
     }
     .content {
-      display: block;
+      display: inline;
     }
     &.close {
       .close-button {

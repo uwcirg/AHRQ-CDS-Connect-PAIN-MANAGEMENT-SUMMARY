@@ -7,6 +7,7 @@ import executeElm from '../utils/executeELM';
 import flagit from '../helpers/flagit';
 import {datishFormat, dateFormat, dateNumberFormat, extractDateFromGMTDateString} from '../helpers/formatit';
 import {dateCompare} from '../helpers/sortit';
+import {getDiffDays} from '../helpers/utility';
 import summaryMap from './summary.json';
 
 import {getEnv, fetchEnvData} from '../utils/envConfig';
@@ -58,8 +59,9 @@ export default class Landing extends Component {
      // console.log("summary map ", summaryMap)
      let totalResources = Object.keys(summaryMap).length;
      let numResourcesLoaded = this.state.collector.length;
+     let stillLoading = numResourcesLoaded <= totalResources;
       this.setState({
-        loadingMessage: `<div>${totalResources} resources are being loaded.</div><div><span class='${totalResources !== numResourcesLoaded?"text-warning": "text-success"}'>${numResourcesLoaded} loaded ...</span></div>`
+        loadingMessage: `<div>${totalResources} resources are being loaded.</div><div><span class='${stillLoading?"text-warning": "text-success"}'>${stillLoading ? (numResourcesLoaded > 0 ? numResourcesLoaded-1: 0) : totalResources} loaded ...</span></div>`
       });
     }, 30);
   }
@@ -94,7 +96,9 @@ export default class Landing extends Component {
         const { sectionFlags, flaggedCount } = this.processSummary(result.Summary);
         this.setState({ result, sectionFlags, flaggedCount });
         this.setPatientId();
-        this.clearProcessInterval();
+        setTimeout(function() {
+          this.clearProcessInterval();
+        }.bind(this), 0);
         this.processCollectorErrors();
         //add data from other sources, e.g. PDMP
         Promise.all([this.getExternalData()]).then(
@@ -122,8 +126,7 @@ export default class Landing extends Component {
   }
 
   componentDidUpdate() {
-    //const MIN_HEADER_HEIGHT = 136;
-    const MIN_HEADER_HEIGHT = 148;
+    const MIN_HEADER_HEIGHT = 120;
     if (!this.tocInitialized && !this.state.loading && this.state.result) {
       tocbot.init({
         tocSelector: '.summary__nav',           // where to render the table of contents
@@ -139,6 +142,7 @@ export default class Landing extends Component {
 
       this.tocInitialized = true;
     }
+    //page title
     document.title = "COSRI";
     this.handleHeaderPos();
 
@@ -308,9 +312,8 @@ export default class Landing extends Component {
         let dataPoint = {};
         let startDate = extractDateFromGMTDateString(currentMedicationItem[startDateFieldName]);
         let endDate = extractDateFromGMTDateString(currentMedicationItem[endDateFieldName]);
-        let [oStartDate, oEndDate] = [new Date(startDate), new Date(endDate)];
-        let diffTime = oEndDate - oStartDate;
-        let diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+        let oStartDate = new Date(startDate);
+        let diffDays = getDiffDays(startDate, endDate);
         nextObj = (index+1) <= graph_data.length-1 ? graph_data[index+1]: null;
 
         //add start date data point
@@ -342,6 +345,7 @@ export default class Landing extends Component {
         dataPoint[graphDateFieldName] = currentMedicationItem[endDateFieldName];
         dataPoint[MMEValueFieldName] = currentMedicationItem[MMEValueFieldName];
         dataPoint[END_DELIMITER_FIELD_NAME] = true;
+        dataPoint[PLACEHOLDER_FIELD_NAME] = true;
         dataPoint = {...dataPoint, ...currentMedicationItem};
         dataPoints.push(dataPoint);
         prevObj = currentMedicationItem;
@@ -378,7 +382,6 @@ export default class Landing extends Component {
       });
       prevObj = null;
       let finalDataPoints = [];
-      let DUMMY_FIELD_NAME = "dummy";
       dataPoints.forEach(function(currentDataPoint, index) {
         let dataPoint = {};
         nextObj = dataPoints[index+1] ? dataPoints[index+1]: null;
@@ -394,37 +397,37 @@ export default class Landing extends Component {
         //overlapping data points
         if (prevObj && (prevObj[MMEValueFieldName] !== currentDataPoint[MMEValueFieldName])) {
           //add data point with older value for the previous med
-          prevObj[PLACEHOLDER_FIELD_NAME] = !prevObj[DUMMY_FIELD_NAME] ? false : true;
           dataPoint = {};
           dataPoint[graphDateFieldName] = currentDataPoint[graphDateFieldName];
           dataPoint[MMEValueFieldName] = prevObj[MMEValueFieldName];
           dataPoint[PLACEHOLDER_FIELD_NAME] = true;
           finalDataPoints.push(dataPoint);
-          currentDataPoint[PLACEHOLDER_FIELD_NAME] = false;
           finalDataPoints.push(currentDataPoint);
         } else if (prevObj && currentDataPoint[START_DELIMITER_FIELD_NAME] && dateNumberFormat(currentDataPoint[startDateFieldName]) > dateNumberFormat(prevObj[endDateFieldName])) {
-            //add 0 value dummy data point to denote start of med
-            dataPoint = {};
-            dataPoint[graphDateFieldName] = currentDataPoint[graphDateFieldName];
-            dataPoint[MMEValueFieldName] = 0;
-            dataPoint[START_DELIMITER_FIELD_NAME] = true;
-            dataPoint[DUMMY_FIELD_NAME] = true;
-            dataPoint[PLACEHOLDER_FIELD_NAME] = true;
-            finalDataPoints.push(dataPoint);
-            //add current data point
-            finalDataPoints.push(currentDataPoint);
+          if (getDiffDays(prevObj[endDateFieldName], currentDataPoint[startDateFieldName]) > 1) {
+              dataPoint = {};
+              dataPoint[graphDateFieldName] = currentDataPoint[graphDateFieldName];
+              //add 0 value dummy data point to denote start of med where applicable
+              dataPoint[MMEValueFieldName] = 0;
+              dataPoint[START_DELIMITER_FIELD_NAME] = true;
+              dataPoint[PLACEHOLDER_FIELD_NAME] = true;
+              finalDataPoints.push(dataPoint);
+          }
+          //add current data point
+          finalDataPoints.push(currentDataPoint);
         }
         else if (nextObj && currentDataPoint[END_DELIMITER_FIELD_NAME] && (dateNumberFormat(currentDataPoint[endDateFieldName]) < dateNumberFormat(nextObj[startDateFieldName])) && (dateNumberFormat(currentDataPoint[endDateFieldName]) < dateNumberFormat(nextObj[endDateFieldName]))) {
             //add current data point
             finalDataPoints.push(currentDataPoint);
-            //add 0 value dummy data point to denote end of med
-            dataPoint = {};
-            dataPoint[graphDateFieldName] = currentDataPoint[graphDateFieldName];
-            dataPoint[MMEValueFieldName] = 0;
-            dataPoint[DUMMY_FIELD_NAME] = true;
-            dataPoint[END_DELIMITER_FIELD_NAME] = true;
-            dataPoint[PLACEHOLDER_FIELD_NAME] = true;
-            finalDataPoints.push(dataPoint);
+            if (getDiffDays(currentDataPoint[endDateFieldName], nextObj[startDateFieldName]) > 1) {
+              dataPoint = {};
+              dataPoint[graphDateFieldName] = currentDataPoint[graphDateFieldName];
+              //add 0 value dummy data point to denote end of med where applicable
+              dataPoint[MMEValueFieldName] = 0;
+              dataPoint[END_DELIMITER_FIELD_NAME] = true;
+              dataPoint[PLACEHOLDER_FIELD_NAME] = true;
+              finalDataPoints.push(dataPoint);
+            }
         }
         else {
             finalDataPoints.push(currentDataPoint);

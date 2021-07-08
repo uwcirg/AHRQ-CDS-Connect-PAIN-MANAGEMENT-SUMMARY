@@ -22,6 +22,7 @@ import ErrorBanner from './ErrorBanner';
 import InclusionBanner from './InclusionBanner';
 import ExclusionBanner from './ExclusionBanner';
 import DataInfo from './DataInfo';
+import Disclaimer from './Disclaimer';
 import DevTools from './DevTools';
 import InfoModal from './InfoModal';
 import MMEGraph from './graph/MMEGraph';
@@ -241,10 +242,13 @@ export default class Summary extends Component {
 
     headers.forEach((header) => {
       const headerKey = table.headers[header];
-
+      const headerClass = headerKey.className ? headerKey.className: "";
       const column = {
         id: header,
-        Header: () => <span className={`col-header col-${header}`}>{header}</span>,
+        Header: () => {
+          if (headerKey.header) return <h3 className="col-header-title">{header}</h3>
+          return <span className={`col-header col-${header} ${headerClass}`}>{header}</span>
+        },
         accessor: (entry) => {
           let value = entry[headerKey];
           if (headerKey.formatter) {
@@ -588,31 +592,7 @@ export default class Summary extends Component {
             </div>
           }
 
-          {/* {meetsInclusionCriteria && <div className="legend">
-            <div>
-              <span className="icon orange"></span>CDC guidelines in accordance with Washington State guideline
-            </div>
-            <div>
-              <span className="icon red"></span>Washington State guideline exclusively
-            </div>
-          </div>} */}
-
-          <div className="cdc-disclaimer">
-            Please see the
-            <a
-              href="https://www.cdc.gov/mmwr/volumes/65/rr/rr6501e1.htm"
-              alt="CDC Guideline for Prescribing Opioids for Chronic Pain"
-              target="_blank"
-              rel="noopener noreferrer">
-              CDC Guideline for Prescribing Opioids for Chronic Pain
-            </a>
-            for additional information and prescribing guidance.
-          </div>
-
-	       <div  className="cdc-disclaimer data-source">
-         COSRI incorporates the Clinical Pain Management Summary application, released as open-source software by CDS Connect project at the Agency for Healthcare Research and Quality (AHRQ). We have extended ARHQ's work to provide enhanced security, improved decision support, integration with state Prescription Drug Monitoring Program databases, standalone operation, and other features. For a description of our open source release, contact <a href="mailto:info@cosri.app">info@cosri.app</a>. Support for the development of COSRI was provided by the Washington State Department of Health and the Washington State Health Care Authority through the CMS Support Act.
-          </div>
-
+          <Disclaimer />
 
           <DevTools
             collector={collector}

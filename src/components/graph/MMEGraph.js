@@ -50,9 +50,9 @@ export default class MMEGraph extends Component {
 
   getMaxMMEValue(data) {
     let maxValue =  0;
-    let CAP_MAX_VALUE = 1500;
+    //let CAP_MAX_VALUE = 1500;
     data.forEach(item => {
-      if (item["MMEValue"] > CAP_MAX_VALUE) return true;
+     // if (item["MMEValue"] > CAP_MAX_VALUE) return true;
       maxValue = Math.max(maxValue, item["MMEValue"]);
     });
     return maxValue;
@@ -141,9 +141,9 @@ export default class MMEGraph extends Component {
     const width = parentWidth - margins.left - margins.right;
     const height = 300 - margins.top - margins.bottom;
     const xScale = scaleTime().domain([baseLineDate, maxDate]).rangeRound([0, width]);
-    const xMaxValue = Math.max(140, this.getMaxMMEValue(data));
+    const yMaxValue = Math.max(140, this.getMaxMMEValue(data));
     const yScale = scaleLinear()
-      .domain([0, xMaxValue])
+      .domain([0, yMaxValue])
       .range([height, 0])
       .nice();
 
@@ -161,17 +161,17 @@ export default class MMEGraph extends Component {
         xName: xFieldName,
         yName: yFieldName
     };
-
+    const dataStrokeColor = "#168698";
     const additionalProps = {
-      "strokeColor": "#217684",
-      "strokeFill": "#217684",
+      "strokeColor": dataStrokeColor,
+      "strokeFill": dataStrokeColor,
       "strokeWidth": "2.25"
     };
     additionalProps["dataPoints"] = {
         ...additionalProps,
         ...{
           "dataStrokeWidth": "2.5",
-          "dataStrokeFill": "#217684"
+          "dataStrokeFill": dataStrokeColor
         }
     };
 
@@ -193,13 +193,14 @@ export default class MMEGraph extends Component {
 
     const defaultLegendSettings = {
       "fontFamily": "sans-serif",
-      "fontSize": xMaxValue >= 600 ? "9px": "12px",
+      "fontSize": yMaxValue >= 600 ? "8px": "12px",
       "fontWeight": "600",
+      "letterSpacing": "0.02rem",
       "x": xScale(baseLineDate) + 8
     };
 
     const WA_COLOR = "#a75454";
-    const CDC_COLOR = "#e09b1d";
+    const CDC_COLOR = "#c57829";
     const textMargin = 4;
     const WALegendSettings = {
       "y": yScale(120 + textMargin),
@@ -228,19 +229,20 @@ export default class MMEGraph extends Component {
             className="MMEChartSvg"
             // width={width + margins.left + margins.right}
             // height={height + margins.top + margins.bottom}
-            //preserveAspectRatio="none"
+            //preserveAspectRatio="xMinYMin meet"
             width="100%"
+            height="100%"
             viewBox = {`0 0 ${graphWidth} ${graphHeight}`}
           >
             <g transform={`translate(${margins.left}, ${margins.top})`}>
               <XYAxis {...{xSettings, ySettings}} />
+              <Line lineID="dataLine" data={data} {...dataLineProps} />
               <Line lineID="WALine" strokeColor={WA_COLOR} dotted="true" dotSpacing="3, 3" data={WAData} {...defaultProps} />
               <Line lineID="CDCSecondaryLine" strokeColor={CDC_COLOR} dotted="true" dotSpacing="3, 3" data={CDCSecondaryData} {...defaultProps} />
               <Line lineID="CDCLine" strokeColor={CDC_COLOR} dotted="true" dotSpacing="3, 3" data={CDCData} {...defaultProps} />
               <text {...WALegendSettings}>Washington State consultation threshold</text>
               <text {...CDCLegendSettings} y={yScale(50 + textMargin)}>CDC extra precautions threshold</text>
               <text {...CDCLegendSettings} y={yScale(90 + textMargin)}>CDC avoid/justify threshold</text>
-              <Line lineID="dataLine" data={data} {...dataLineProps} />
             </g>
           </svg>
         </div>

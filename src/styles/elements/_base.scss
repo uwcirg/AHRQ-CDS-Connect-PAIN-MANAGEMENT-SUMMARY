@@ -1,4 +1,4 @@
-$min-header-height: 132px;
+$min-header-height: 120px;
 body {
   margin: 0;
   padding: 0;
@@ -28,7 +28,9 @@ body.fixed {
     margin-top: $min-header-height;
   }
 }
-
+h3 {
+  font-size: 1.2em;
+}
 h3:focus {
   outline: none;
 }

@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   height: 100px;
-  min-height: 136px;
+  min-height: 120px;
 
   &__return-link .return-icon {
     font-size: 1.5em;
@@ -17,14 +17,14 @@
     justify-content: center;
     flex-direction: column;
     height: 100%;
-    width: 300px;
+    width: 280px;
     background-color: $color-black;
     color: $color-white;
 
     &-img {
-     // margin-right: 10px;
      &.primary {
-       width: 244px;
+       width: 190px;
+       max-width: 100%;
      }
      &.secondary {
        width: 28px;
@@ -126,7 +126,7 @@
         align-items: center;
         margin: 0 12px;
         img {
-          width: 185px;
+          width: 180px;
         }
 
         &-count {

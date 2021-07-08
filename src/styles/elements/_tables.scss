@@ -21,7 +21,7 @@
     text-align: left;
     vertical-align: top;
     border: 0;
-    padding: 6px 16px 6px 4px;
+    padding: 4px 16px 4px 4px;
   }
 
   .rt-thead .rt-th {
@@ -61,6 +61,11 @@
       font-weight: 600;
     }
 
+    .col-header-title {
+      margin: 0;
+      border-bottom: 1px solid $color-gray-lighter;
+    }
+
   }
 
   .rt-tbody .rt-td {
@@ -89,12 +94,12 @@
     .-pagination {
       box-shadow: none;
       border-top: 1px solid $color-gray-lighter;
-      padding-top: 8px;
+      padding: 0;
+      padding-top: 4px;
 
       button {
-        width: 65%;
+        width: 60%;
         margin: 4px auto;
-        padding: 4px;
         height: 32px;
       }
 

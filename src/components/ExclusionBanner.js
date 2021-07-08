@@ -27,12 +27,12 @@ export default class ExclusionBanner extends Component {
     return (
       <div
         className={`exclusion-banner banner ${conditionalClass}`}
-        role="banner">
-        <ChevronDownIcon className="close-button" icon="times" title="close" onClick={this.handleCloseToggle} width="25" height="25" />
+        role="banner"
+        onClick={this.handleCloseToggle}>
+        <ChevronDownIcon className="close-button" icon="times" title="close"  width="25" height="25" />
 
         <div className="exclusion-banner__description">
-          <strong className="title"><FontAwesomeIcon icon="exclamation-circle" title="notice" /> LIMITATIONS</strong>
-          <p className="content">This guidance is <b><u>not intended</u></b> to apply to patients undergoing <b>end-of-life care (hospice or palliative)</b>, <b>inpatient treatment</b>, or <b>active cancer treatment</b>. However, some suggestions may be helpful in managing any patient.</p>
+          <strong className="title"><FontAwesomeIcon icon="exclamation-circle" title="notice" /> LIMITATIONS</strong> <span className="content">Guidance <b><u>not intended</u></b> for <b>palliative</b>, <b>inpatient</b>, or <b>active cancer care</b>.</span>
         </div>
       </div>
     );
